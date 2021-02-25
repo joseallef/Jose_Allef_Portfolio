@@ -6,14 +6,14 @@ const StyleTitle = styled.h1`
     text-aling: center;
     justify-content: center;
     aling-items: center;
-    margin-top: 0;
+    margin-top: 10;
     font-size: 33px;
 `;
 
 export default function SectionTitle(){
     return (
         <StyleTitle>
-            Meus projetos
+            Projetos
         </StyleTitle>
     )
 }

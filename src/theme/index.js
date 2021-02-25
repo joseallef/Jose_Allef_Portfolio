@@ -1,4 +1,3 @@
-
 const colors = {
     background: {
       light: {

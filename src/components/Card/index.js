@@ -1,95 +1,84 @@
 import styled, {css} from 'styled-components';
-import Image from './../CardImage';
 import TitleCard from './../TitleCard';
 import {breakpointsMedia} from './../../theme/Utils/breakpointsMedia';
-
 
 const StyleCard = styled.div`
     display: flex;
     justify-content: between;
     align-items: center;
     flex-wrap: wrap;
-    width: 300px;
-    box-shadow: 0 0 8px 3px #EEEEEE;
+    box-shadow: 0 0 10px 3px #EEEEEE;
     border-radius: 2px;
-    padding: 5px;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-bottom: 10px;
-    float: left;
+    padding: 0px;
+    background: #eceff0;
 
     ${breakpointsMedia({
         xs: css`
-         max-width: initial;
-     
-         padding-right: 28px;
-         padding-left: 28px;
-         background: blue !important;
+          font-family: 'Rubik', sans-serif;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          margin-top: 18px
+          max-width: 478px;
+          width: 90vw;
          `,
-        md: css`
-         justify-content: flex-start;
-         margin-top: 32px;
-         margin-left: auto;
-         margin-right: auto;
-         width: 100%;
-         padding: 0 16px;
-         max-width: 768px;
-         background: black !important;
-       `,
-       sm: css`
-         max-width: initial;
- 
-         padding-right: 28px;
-         padding-left: 28px;
-         background: red !important;
+  
+        sm: css`
+          display: flex;
+          justify-content: center;
+          aling-items: center;          
+          width: 400px;          
        
-       `,
-       lg: css`
-         max-width: 1160px; 
-         `,
-         xl: css`
-         max-width: 1222px;
-         background: yellow;
- 
-         
-         margin: auto;
-         padding-right: 28px;
-         padding-left: 28px;
-         margin-right: auto;
-         margin-left: auto;
-       `,
+        `,
+        md: css`
+          max-width: 768px;
+        `,
+        lg: css`
+          max-width: 992px;
+        `,
+        xl: css`
+          width: 350px;
+          max-width: 1200px;
+        `,
      })}
-
 `;
 
-StyleCard.Generic = styled.div`
-    display: block;
-    margin-top: 400px;
-    justify-content: center;
-    aling-items: center;
-    width: 200px;
-    height: 100px;
+const StyleImage = styled.img`
+    width: 100%;    
+    display: flex;
+    justify-content: center;   
+    flex-wrap: wrap;
+    height: 35vh;
 
+    ${breakpointsMedia({
+        xs: css`
+            height: 35vh;
+        `,
+        sm: css`
+            height: 35vh;
+        `,
+        md: css`
+            height: 35vh;
+        `,
+        lg: css`
+            height: 35vh;
+        `,
+        xl: css`
+            width: 350px;
+            height: 250px;
+        `,
+    })}
 `;
 
-export default function Card(){
-
+export function Card({url, link, description, title}){  
     return(
-        <>
-        <StyleCard>
-            <Image />
-            <TitleCard />
-        </StyleCard>
-        <StyleCard>
-            <Image />
-            <TitleCard />
-        </StyleCard>
-        <StyleCard>
-            <Image />
-            <TitleCard />
-        </StyleCard>
-
-        </>
+      <>
+          <StyleCard>
+            <StyleImage src={url} alt={link} />
+            <TitleCard description={description} title={title} />
+          </StyleCard>
+      </>
         
     )
 }

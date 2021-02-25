@@ -1,7 +1,8 @@
 import {css} from 'styled-components';
-import breakpoints from './../index';
+import theme from './../index';
 
 
+const {breakpoints} = theme;
 
 export function breakpointsMedia(cssByBreakpoints){
 

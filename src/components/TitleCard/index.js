@@ -1,36 +1,31 @@
 import styled from 'styled-components';
 
-const StyleTitleCard = styled.h4`
-    display: flex;
-    justify-content: center;
-    aling-items: center;
+const StyleTitleCard = styled.h2`
     margin: 0px;
     text-align: center;
-    width: 100%;
-    height: 30px;
-    background: #eceff0;  
+    vertical-align: 50px;
+    width: 100%; 
+    padding: 10px;
+`;
+
+const StyleDescriptionCard = styled.p`
+    margin: 0px;
+    text-align: center;
+    vertical-align: 50px;
+    padding-bottom: 20px;
 
 
 `;
 
-// StyleTitleCard.Paragraf = styled.p`
-//     display: block;
-//     height: 80px;
-//     justify-content: center;
-//     aling-items: center;
-//     font-size: 20px;
-//     border: 1px solid black;
-
-// `;
-
-
-export default function TitleCard(){
+export default function TitleCard({description, title}){
     return (
         <>
-        <StyleTitleCard>
-            Instalura
-        </StyleTitleCard>
-
+            <StyleTitleCard>
+                {title}
+            </StyleTitleCard>
+            <StyleDescriptionCard>
+                {description}
+            </StyleDescriptionCard>
         </>
     )
 }

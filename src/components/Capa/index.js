@@ -40,7 +40,7 @@ export default function Capa(){
             
             <Background.Image />
             <Background.Name>
-                josé allef
+                José Allef
             </Background.Name>
         </Background>
     );

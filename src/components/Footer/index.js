@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const StyleFooter = styled.footer`
+    margin-bottom: 0px;
     width: 100%;
     height: 50px;
     background: #000;

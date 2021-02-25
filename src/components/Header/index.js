@@ -19,7 +19,6 @@ const HeaderStyle = styled.nav`
 
 `;
 
-
 export default function Header(){
     return (
         <HeaderStyle>
