@@ -26,13 +26,13 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '14.15.0'
-      #################################
+      ################################# 
 
       # Runs a single command using the runners shell
       - name: Node Version
-        run: node -v 
+        run: node -v
       - name: Install de dependencias
         run: yarn install
-      - name: Roda o Linter!
+      - name: Roda o Linter
         run: yarn lint
 
