@@ -52,7 +52,7 @@ export default function Image(){
                 <Card            
                     url="image/instalura.png"
                     link="https://instalura-base.allef.vercel.app/"
-                    description="Primeiro projeto do bootcamp JAMSaack"
+                    description="Primeiro projeto do bootcamp JAMStack"
                     title="Instalura"
                 />
             </LinkStyle>
@@ -65,7 +65,7 @@ export default function Image(){
                 />
             </LinkStyle>
             <LinkStyle href="https://via.placeholder.com" target="_blanck">
-                <Card            
+                <Card
                     url="https://via.placeholder.com/300"
                     link="https://instalura-base.allef.vercel.app/"
                     description="Project Report"

@@ -42,7 +42,39 @@ export const StyleWrapperContainer = styled.div`
         justify-content: center;
         aling-items: center;
         max-width: 1200px;
-        height: 100vh;
+        min-height: 100vh;
       `,
     })}    
+`;
+
+StyleWrapperContainer.ButtonModal = styled.button`
+  position: relative;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  margin-bottom: 15px;
+  float: right;
+  height: 50px;
+  width: 250px;
+  vertical-align: middle;
+  cursor: pointer;
+
+  &:active {
+    border: none;
+    outline: none;
+  }
+  
+
+
+`;
+
+StyleWrapperContainer.IconButtonModal = styled.div`
+  margin-top: -10px;
+  display: flex;
+  float: right;
+  height: 45px;
+  width: 45px;
+  border: none;
+  outline: none;
 `;
