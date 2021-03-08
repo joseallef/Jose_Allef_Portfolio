@@ -4,8 +4,7 @@ export const GlobalStyle = createGlobalStyle`
  * { 
     box-sizing: border-box;
   }
-
-  
+    
   html,
   body {
     margin: 0;
@@ -23,4 +22,4 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
   }
-`
+`;

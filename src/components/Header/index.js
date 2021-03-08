@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import NavBar from '../NavBar';
 
-
 const HeaderStyle = styled.nav`
     width: 100%;
     height: 50px;
@@ -19,10 +18,10 @@ const HeaderStyle = styled.nav`
 
 `;
 
-export default function Header(){
-    return (
-        <HeaderStyle>
-            <NavBar />
-        </HeaderStyle>
-    )
+export default function Header() {
+  return (
+    <HeaderStyle>
+      <NavBar />
+    </HeaderStyle>
+  );
 }

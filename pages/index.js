@@ -1,31 +1,62 @@
+/* eslint-disable no-lone-blocks */
 import React from 'react';
-import styled from 'styled-components';
-import Capa from './../src/components/Capa';
+import Lottie from 'lottie-react-web';
+import Capa from '../src/components/Capa';
 import Header from '../src/components/Header';
-import {StyleWrapperContainer} from './../src/components/ProjectsWrapper';
-import Footer from './../src/components/Footer';
-import Image from './../src/components/CardImage';
-import SectionTitle from './../src/components/SectionTitle';
-
-const Title = styled.h1`
-  font-size: 50px;
-  color: ${({ theme }) => theme.colors.primary};
-`;
-
+import { StyleWrapperContainer } from '../src/components/ProjectsWrapper';
+import SectionTitle from '../src/components/SectionTitle';
+import Image from '../src/components/CardImage';
+import Footer from '../src/components/Footer';
+import Modal from '../src/components/commons/Modal';
+import FormCadastro from '../src/components/forms';
+import addUser from '../public/image/addUser.json';
 
 export default function Home() {
-  return (    
+  const [isModalOpen, setModalState] = React.useState(false);
+
+  return (
     <>
-        <Capa />
-        <Header />
+      <Capa />
+      <Header />
 
-        <StyleWrapperContainer>
-          <SectionTitle />
-          <Image />
-        </StyleWrapperContainer>
-        
-        <Footer />
-    </> 
-  )
+      <StyleWrapperContainer>
+        <SectionTitle />
+        <Image />
 
+        <StyleWrapperContainer.ButtonModal
+          onClick={() => {
+            setModalState(!isModalOpen);
+          }}
+        >
+          Entrar em Contato
+          <StyleWrapperContainer.IconButtonModal>
+            <Lottie
+              options={{
+                animationData: addUser,
+              }}
+            />
+          </StyleWrapperContainer.IconButtonModal>
+        </StyleWrapperContainer.ButtonModal>
+      </StyleWrapperContainer>
+
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => {
+          {
+            setModalState(false);
+          }
+        }}
+      >
+        {(propsDoModal) => (
+          <FormCadastro
+            propsDoModal={propsDoModal}
+            onClose={() => {
+              setModalState(false);
+            }}
+          />
+        )}
+      </Modal>
+      <Footer />
+    </>
+  );
 }
