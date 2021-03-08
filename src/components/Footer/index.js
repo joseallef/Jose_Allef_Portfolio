@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import styled from 'styled-components';
 
 const StyleFooter = styled.footer`
@@ -17,16 +18,15 @@ const StyleFooter = styled.footer`
 
 `;
 
-export default function Footer(){
-
-    return (
-        <StyleFooter>
-            <a href="https://github.com/joseallef" target="_blanck" style={{ display: 'flex', margin: '10px' }}>
-                <img src="image/githubIcon.svg" alt="Github" width="30" />
-            </a>
-            <a href="https://www.linkedin.com/in/jose-allef-17b508170/" target="_blanck" style={{ display: 'flex', margin: '10px'}}>
-                <img src="image/linkedinIcon.svg" alt="Linkedin" width="30" />
-            </a>
-        </StyleFooter>
-    )
+export default function Footer() {
+  return (
+    <StyleFooter>
+      <a href="https://github.com/joseallef" target="_blanck" style={{ display: 'flex', margin: '10px' }}>
+        <img src="image/githubIcon.svg" alt="Github" width="30" />
+      </a>
+      <a href="https://www.linkedin.com/in/jose-allef-17b508170/" target="_blanck" style={{ display: 'flex', margin: '10px' }}>
+        <img src="image/linkedinIcon.svg" alt="Linkedin" width="30" />
+      </a>
+    </StyleFooter>
+  );
 }

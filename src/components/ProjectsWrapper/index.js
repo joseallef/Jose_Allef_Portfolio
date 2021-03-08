@@ -1,16 +1,15 @@
-import styled, {css} from 'styled-components';
-import {breakpointsMedia} from './../../theme/Utils/breakpointsMedia';
+import styled, { css } from 'styled-components';
+import { breakpointsMedia } from '../../theme/Utils/breakpointsMedia';
 
 // clip-path: polygon(0px 0px, 100% 115px, 100% 100%, 0px 100%);
 export const StyleWrapperContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;   
-    
+    width: 100%;
 
     ${breakpointsMedia({
-       xs: css`
+    xs: css`
         font-family: 'Rubik', sans-serif;
         display: flex;
         align-items: center;
@@ -19,24 +18,24 @@ export const StyleWrapperContainer = styled.div`
         margin-top: 18px
         `,
 
-      sm: css`
+    sm: css`
         max-width: initial;
         display: flex;
         justify-content: center;
         aling-items: center;
       
       `,
-      md: css`
+    md: css`
         margin-top: 0px;
         margin-left: auto;
         margin-right: auto;
         max-width: 768px;
     `,
-      lg: css`
+    lg: css`
         margin-top: 0px;
         max-width: 1160px;
         `,
-      xl: css`
+    xl: css`
         margin-top: 0px;
         display: flex;
         justify-content: center;
@@ -44,7 +43,7 @@ export const StyleWrapperContainer = styled.div`
         max-width: 1200px;
         min-height: 100vh;
       `,
-    })}    
+  })}
 `;
 
 StyleWrapperContainer.ButtonModal = styled.button`
@@ -64,9 +63,6 @@ StyleWrapperContainer.ButtonModal = styled.button`
     border: none;
     outline: none;
   }
-  
-
-
 `;
 
 StyleWrapperContainer.IconButtonModal = styled.div`

@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
-import styled, {createGlobalStyle, css} from 'styled-components';
-import Proptype from 'prop-types';
+import styled, { createGlobalStyle, css } from 'styled-components';
+// eslint-disable-next-line import/no-unresolved
+import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 
 const FormWapper = styled.div`
@@ -19,18 +21,18 @@ const FormWapper = styled.div`
     color: #fff;
 
     ${({ isOpen }) => {
-        if(isOpen){
-            return css`
-                opacity: 1;
-                pointer-events: all;
+    if (isOpen) {
+      return css`
+              opacity: 1;
+              pointer-events: all;
             `;
-        }
+    }
 
-        return css`
+    return css`
             opacity: 0;
             pointer-events: none;
         `;
-    }}
+  }}
  
 `;
 
@@ -40,55 +42,52 @@ html, body {
     }
 `;
 
-
-function Modal({isOpen, onClose, children}){
-    return (
-        <FormWapper
-            isOpen={isOpen}
-            onClick={(event) =>{
-                const isSafeArea = event.target.closest('[data-modal-safe-area="true"]');
-                if(!isSafeArea){
-                    onClose();
-                }
-
-            }}
-        >
-            {isOpen && <Scroll />}
-            <motion.div
-            
-            variants={{
-                open:{
-                    x:0,
-                },
-                closed: {
-                    y: '100%',
-                },
-            }}
-            
-            animate={
-                isOpen ? 'open' : 'closed'
+// eslint-disable-next-line react/prop-types
+function Modal({ isOpen, onClose, children }) {
+  return (
+    <FormWapper
+      isOpen={isOpen}
+      onClick={(event) => {
+        const isSafeArea = event.target.closest('[data-modal-safe-area="true"]');
+        if (!isSafeArea) {
+          onClose();
+        }
+      }}
+    >
+      {isOpen && <Scroll />}
+      <motion.div
+        variants={{
+          open: {
+            x: 0,
+          },
+          closed: {
+            y: '100%',
+          },
+        }}
+        animate={
+             isOpen ? 'open' : 'closed'
             }
-            transition={{
-                duration: .8,
-            }}
-
-            style={{
-                display: 'flex',
-                flex: 1,
-            }}            
-            >
-                {children({
-                    'data-modal-safe-area': 'true',
-                })}
-            </motion.div>
-        </FormWapper>
-    )
+        transition={{
+          duration: 0.8,
+        }}
+        style={{
+          display: 'flex',
+          flex: 1,
+        }}
+      >
+        {children({
+          'data-modal-safe-area': 'true',
+        })}
+      </motion.div>
+    </FormWapper>
+  );
 }
 
-Modal.Proptype = {
-    isOpen: Proptype.bool,
-    onClose: Proptype.func,
-    children: Proptype.func,
-}
+// eslint-disable-next-line react/no-typos
+Modal.PropTypes = {
+  isOpen: PropTypes.bool,
+  onClose: PropTypes.func,
+  children: PropTypes.func,
+};
 
 export default Modal;

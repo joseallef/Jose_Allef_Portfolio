@@ -1,6 +1,7 @@
+import React from 'react';
 import styled from 'styled-components';
-import PropType from 'prop-types';
-
+// eslint-disable-next-line import/no-unresolved
+import PropTypes from 'prop-types';
 
 const TextLink = styled.span`
     list-style: none;
@@ -17,48 +18,52 @@ const TextLink = styled.span`
     align-items: right;
 `;
 
-
-function Text({tag, variante, children, ...props}){
-    // console.log(tag, variante, children, props);
-    return (
-        <TextLink as={tag} variante={variante} {...props}>{children}
-        </TextLink>
-    )
+function Text({
+  // eslint-disable-next-line react/prop-types
+  tag, variante, children, ...props
+}) {
+  return (
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    <TextLink as={tag} variante={variante} {...props}>
+      {children}
+    </TextLink>
+  );
 }
 
 const links = [
-    {
-        text: '< Allef />',
-        url: '/',
-    },
-    {
-        text: 'Sobre mim',
-        url: 'sobre',
-    },
-    {
-        text: 'Contato',
-        url: 'contato',
-    }
-]
+  {
+    text: '< Allef />',
+    url: '/',
+  },
+  {
+    text: 'Sobre mim',
+    url: 'sobre',
+  },
+  {
+    text: 'Contato',
+    url: 'contato',
+  },
+];
 
-export default function NavBar(props){
-    // console.log(props);
-    return (
-        <>
-            {links.map((link) =>{
-                return (
-                    <li key={link.url}>                        
-                        <Text variante="ok" tag="a" href={link.url}> {link.text}
-                        </Text>                    
-                    </li>
-                )
-            })}
-        </>
-    )
+export default function NavBar() {
+  // console.log(props);
+  return (
+    <>
+      {links.map((link) => (
+        <li key={link.url}>
+          <Text variante="ok" tag="a" href={link.url}>
+            {' '}
+            {link.text}
+          </Text>
+        </li>
+      ))}
+    </>
+  );
 }
 
-Text.PropType = {
-    tag: PropType.string.isRequired,
-    variante: PropType.string.isRequired,
-    children: PropType.string.isRequired,
-}
+// eslint-disable-next-line react/no-typos
+Text.PropTypes = {
+  tag: PropTypes.string.isRequired,
+  variante: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
+};

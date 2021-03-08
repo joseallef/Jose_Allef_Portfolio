@@ -1,19 +1,20 @@
-import styled, {css} from 'styled-components';
-import TitleCard from './../TitleCard';
-import {breakpointsMedia} from './../../theme/Utils/breakpointsMedia';
+import React from 'react';
+import styled, { css } from 'styled-components';
+import TitleCard from '../TitleCard';
+import { breakpointsMedia } from '../../theme/Utils/breakpointsMedia';
 
 const StyleCard = styled.div`
-    display: flex;
-    justify-content: between;
-    align-items: center;
+  display: flex;
+  justify-content: between;
+  align-items: center;
     flex-wrap: wrap;
     box-shadow: 0 0 10px 3px #EEEEEE;
     border-radius: 2px;
     padding: 0px;
     background: #eceff0;
 
-    ${breakpointsMedia({
-        xs: css`
+  ${breakpointsMedia({
+    xs: css`
           font-family: 'Rubik', sans-serif;
           display: flex;
           align-items: center;
@@ -23,25 +24,25 @@ const StyleCard = styled.div`
           max-width: 478px;
           width: 90vw;
          `,
-  
-        sm: css`
+
+    sm: css`
           display: flex;
           justify-content: center;
           aling-items: center;          
           width: 400px;          
        
         `,
-        md: css`
+    md: css`
           max-width: 768px;
         `,
-        lg: css`
+    lg: css`
           max-width: 992px;
         `,
-        xl: css`
+    xl: css`
           width: 350px;
           max-width: 1200px;
         `,
-     })}
+  })}
 `;
 
 const StyleImage = styled.img`
@@ -52,33 +53,35 @@ const StyleImage = styled.img`
     height: 35vh;
 
     ${breakpointsMedia({
-        xs: css`
+    xs: css`
             height: 35vh;
         `,
-        sm: css`
+    sm: css`
             height: 35vh;
         `,
-        md: css`
+    md: css`
             height: 35vh;
         `,
-        lg: css`
+    lg: css`
             height: 35vh;
         `,
-        xl: css`
+    xl: css`
             width: 350px;
             height: 250px;
         `,
-    })}
+  })}
 `;
 
-export function Card({url, link, description, title}){  
-    return(
-      <>
-          <StyleCard>
-            <StyleImage src={url} alt={link} />
-            <TitleCard description={description} title={title} />
-          </StyleCard>
-      </>
-        
-    )
+export function Card({
+  // eslint-disable-next-line react/prop-types
+  url, link, description, title,
+}) {
+  return (
+    <>
+      <StyleCard>
+        <StyleImage src={url} alt={link} />
+        <TitleCard description={description} title={title} />
+      </StyleCard>
+    </>
+  );
 }

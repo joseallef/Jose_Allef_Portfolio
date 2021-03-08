@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const StyledForm = styled.div`
     display: flex;
@@ -45,9 +45,9 @@ StyledForm.Button = styled.button`
         outline: none;
     }
 
-    ${({disabled}) => {
-        if(disabled){
-            return css`
+    ${({ disabled }) => {
+    if (disabled) {
+      return css`
                 &:hover,
                 &:focus {
                     cursor: not-allowed;
@@ -56,9 +56,9 @@ StyledForm.Button = styled.button`
                     box-shadow: 0 0 5px 1px #ccc;
                 }
             `;
-        }
+    }
 
-        return css`
+    return css`
             &:hover,
             &:focus {
                 cursor: pointer;
@@ -69,7 +69,7 @@ StyledForm.Button = styled.button`
             }
         
         `;
-    }}
+  }}
 `;
 
 StyledForm.TextArea = styled.textarea`
