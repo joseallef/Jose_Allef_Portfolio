@@ -10,12 +10,14 @@ import TitleCard from '../commos/TitleCard';
 import {
   WapperProject, CardProject, DescriptionProject, MyLink,
 } from './StyleCard';
+import SEO from '../commos/SEO';
 
 function ProjectCard({
   image, title, description, link,
 }) {
   return (
     <>
+      <SEO headTitle="Projeto" />
       <Header />
       <StyleWrapperContainer>
         <h1>Project reporte</h1>
@@ -44,7 +46,14 @@ function ProjectCard({
   );
 }
 
-ProjectCard.prototype = {
+ProjectCard.defaultProps = {
+  image: '',
+  title: '',
+  description: '',
+  link: '',
+};
+
+ProjectCard.propTypes = {
   image: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,

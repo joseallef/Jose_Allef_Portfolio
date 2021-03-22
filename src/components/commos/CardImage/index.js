@@ -7,7 +7,8 @@ export default function Image() {
   return (
     <>
       {db.projects.map((project, index) => (
-        <Link href={`/project/${project.title}`}>
+        // eslint-disable-next-line react/no-array-index-key
+        <Link href={`/project/${project.title}`} key={index}>
           <Card
             href={`/project/${index}`}
             url={project.image}

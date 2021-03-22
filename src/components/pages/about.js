@@ -10,12 +10,14 @@ import Footer from '../commos/Footer';
 import addUser from '../../../public/image/addUser.json';
 import Modal from '../commos/Modal';
 import FormCadastro from '../forms';
+import SEO from '../commos/SEO';
 
 // eslint-disable-next-line react/prop-types
 export default function About({ repositories }) {
   const [isModalOpen, setModalState] = React.useState(false);
   return (
     <>
+      <SEO headTitle="Sobre" />
       <Header />
       <StyleWrapperContainer>
         <WapperRepositorys.About>

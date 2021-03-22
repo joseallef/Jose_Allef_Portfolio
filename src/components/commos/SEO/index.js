@@ -23,7 +23,6 @@ export default function SEO({ headTitle }) {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
-
     </Head>
   );
 }
