@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { breakpointsMedia } from '../../theme/Utils/breakpointsMedia';
 
 const StyledForm = styled.div`
     display: flex;
@@ -12,6 +13,26 @@ const StyledForm = styled.div`
     box-shadow: 0 0 10px 2px #ccc;
     overflow: hidden;
 
+    ${breakpointsMedia({
+    xs: css`
+        width: 90vw;
+        font-size: 12px
+      `,
+    sm: css`
+      width: 70vw;
+    `,
+    md: css`
+      width: 50vw;
+    `,
+    lg: css`
+      width: 40vw;
+      font-size: 15px
+    `,
+    xl: css`
+      width: 30vw;
+    `,
+  })}
+
 `;
 
 StyledForm.Input = styled.input`
@@ -20,6 +41,7 @@ StyledForm.Input = styled.input`
     padding: 15px;
     margin-bottom: 17px;
     border: .5px solid #555;
+    font-size: 17px;
     
     &:focus {
         outline: none;
@@ -77,6 +99,8 @@ StyledForm.TextArea = styled.textarea`
     height: 80px;
     margin-bottom: 17px;
     resize: none;
+    
+      font-size: 20px;
 
 `;
 
@@ -85,10 +109,20 @@ StyledForm.Span = styled.span`
     float: right;
     border: 1px solid black;
     border-radius: 90%;
-    padding: 10px;
     cursor: pointer;
     margin-top: -10px;
     margin-bottom: 35px;
+
+    font-family: verdana;
+
+    ${breakpointsMedia({
+    xs: css`
+          padding: 5px;
+        `,
+    lg: css`
+        padding: 5px;
+    `,
+  })}
 
 `;
 
@@ -101,6 +135,7 @@ StyledForm.IconButton = styled.div`
 
 StyledForm.MessageCad = styled.div`
     margin-top: 25px;
+    font-size: 20px;
 `;
 
 export default StyledForm;

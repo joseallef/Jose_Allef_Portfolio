@@ -1,17 +1,24 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import TitleCard from '../TitleCard';
-import { breakpointsMedia } from '../../theme/Utils/breakpointsMedia';
+import { breakpointsMedia } from '../../../theme/Utils/breakpointsMedia';
 
-const StyleCard = styled.div`
+export const StyleCard = styled.div`
   display: flex;
-  justify-content: between;
+  justify-content: center;
   align-items: center;
-    flex-wrap: wrap;
-    box-shadow: 0 0 10px 3px #EEEEEE;
-    border-radius: 2px;
-    padding: 0px;
-    background: #eceff0;
+  flex-wrap: wrap;
+  box-shadow: 0 0 10px 3px #EEEEEE;
+  border-radius: 5px;
+  padding: 0px;
+  background: rgb(236, 239, 240);
+  margin: 15px;
+  color: #999;
+
+  &:hover {
+    box-shadow: 0 0 12px 3px #AAAAAA;
+    cursor: pointer;
+  }
 
   ${breakpointsMedia({
     xs: css`
@@ -34,6 +41,7 @@ const StyleCard = styled.div`
         `,
     md: css`
           max-width: 768px;
+          width: 300px; 
         `,
     lg: css`
           max-width: 992px;
@@ -51,6 +59,7 @@ const StyleImage = styled.img`
     justify-content: center;   
     flex-wrap: wrap;
     height: 35vh;
+    border-radius: 5px;
 
     ${breakpointsMedia({
     xs: css`
@@ -74,12 +83,12 @@ const StyleImage = styled.img`
 
 export function Card({
   // eslint-disable-next-line react/prop-types
-  url, link, description, title,
+  url, description, title,
 }) {
   return (
     <>
       <StyleCard>
-        <StyleImage src={url} alt={link} />
+        <StyleImage src={url} alt={description} />
         <TitleCard description={description} title={title} />
       </StyleCard>
     </>

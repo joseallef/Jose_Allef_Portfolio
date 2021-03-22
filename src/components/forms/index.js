@@ -3,6 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Lottie from 'lottie-react-web';
+import propTypes from 'prop-types';
 import closeJson from '../../../public/image/close.json';
 import cadSuccess from '../../../public/image/cadSuccess.json';
 import cadError from '../../../public/image/cadError.json';
@@ -106,8 +107,10 @@ function FormContent({ onClose }) {
               width="50px"
               options={{
                 animationData: cadSuccess,
+                loop: false,
               }}
             />
+            Cadastro Realizado com sucesso!
           </>
           )}
           {isFormSubmited && status === formStates.ERROR && (
@@ -116,8 +119,10 @@ function FormContent({ onClose }) {
               width="50px"
               options={{
                 animationData: cadError,
+                loop: false,
               }}
             />
+            Erro ao Cadastrar
           </>
           )}
         </StyledForm.MessageCad>
@@ -125,6 +130,11 @@ function FormContent({ onClose }) {
     </StyleContainerModal>
   );
 }
+FormContent.prototype = {
+  name: propTypes.string.isRequired,
+  email: propTypes.string.isRequired,
+  mensagem: propTypes.string.isRequired,
+};
 
 export default function FormCadastro({ propsDoModal, onClose }) {
   return (
