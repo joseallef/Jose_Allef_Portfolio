@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Background = styled.div`
+export const Background = styled.div`
   background-image: url('./image/background-dark.jpg');
   background-size: cover;
   width: 100vw;

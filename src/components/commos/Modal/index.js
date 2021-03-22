@@ -1,7 +1,8 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import styled, { createGlobalStyle, css } from 'styled-components';
-import Proptypes from 'prop-types';
+import propTypes from 'prop-types';
 import { motion } from 'framer-motion';
 
 const FormWapper = styled.div`
@@ -82,11 +83,10 @@ function Modal({ isOpen, onClose, children }) {
   );
 }
 
-// eslint-disable-next-line react/no-typos
-Modal.Proptypes = {
-  isOpen: Proptypes.bool,
-  onClose: Proptypes.func,
-  children: Proptypes.func,
+Modal.propTypes = {
+  isOpen: propTypes.bool,
+  onClose: propTypes.func,
+  children: propTypes.func,
 };
 
 export default Modal;

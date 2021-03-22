@@ -8,8 +8,7 @@ const HeaderStyle = styled.nav`
     background: #999;
     font-size: 18px;
     color: #fff;
-    padding: 5px;    
-    text-decoration: none;
+    padding: 5px;
     list-style: none;
 
     display: flex;
