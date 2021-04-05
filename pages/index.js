@@ -9,7 +9,7 @@ import Image from '../src/components/commos/CardImage';
 import Footer from '../src/components/commos/Footer';
 import Modal from '../src/components/commos/Modal';
 import FormCadastro from '../src/components/forms';
-import addUser from '../public/image/addUser.json';
+import addUser from '../public/icon/addUser.json';
 import SEO from '../src/components/commos/SEO';
 
 export default function Home() {
@@ -47,9 +47,7 @@ export default function Home() {
       <Modal
         isOpen={isModalOpen}
         onClose={() => {
-          {
-            setModalState(false);
-          }
+          setModalState(false);
         }}
       >
         {(propsDoModal) => (

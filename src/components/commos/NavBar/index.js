@@ -20,7 +20,7 @@ export default function NavBar() {
   return (
     <>
       {links.map((link) => (
-        <li key={link.url}>
+        <li key={link.text}>
           <Link
             href={link.url}
             // eslint-disable-next-line react/no-children-prop

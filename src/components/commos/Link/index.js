@@ -12,7 +12,7 @@ const TextLink = styled.a`
 export default function Link({ href, children }) {
   return (
     <NextLink href={href} passHref>
-      <TextLink>
+      <TextLink href={href}>
         {children}
       </TextLink>
     </NextLink>

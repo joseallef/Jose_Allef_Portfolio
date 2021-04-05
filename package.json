@@ -6,11 +6,19 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint --ignore-path .gitignore .",
-    "commit": "cz"
+    "commit": "cz",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:integration:open": "cypress open"
   },
   "dependencies": {
+    "@crello/react-lottie": "^0.0.11",
+    "@types/jest": "^26.0.22",
+    "canvas": "^2.7.0",
     "commitizen": "^4.2.3",
+    "eslint-plugin-jest": "^24.3.3",
     "framer-motion": "^3.10.0",
+    "jest": "^26.6.3",
     "lottie-react-web": "^2.2.2",
     "next": "latest",
     "prop-types": "^15.7.2",
@@ -22,15 +30,22 @@
   "devDependencies": {
     "@commitlint/cli": "^12.0.1",
     "@commitlint/config-conventional": "^12.0.1",
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/react-hooks": "^5.1.1",
     "babel-plugin-styled-components": "^1.8.0",
+    "cypress": "^6.8.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "^7.21.0",
     "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-cypress": "^2.11.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "husky": "^4.3.8"
+    "husky": "^4.3.8",
+    "jest-canvas-mock": "^2.3.1",
+    "jest-styled-components": "^7.0.3"
   },
   "husky": {
     "hooks": {
