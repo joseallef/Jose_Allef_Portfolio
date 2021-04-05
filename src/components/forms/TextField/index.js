@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import Input from './style';
 
 export default function TextField({
-  name, value, placeholder, onChange,
+  tag, name, value, placeholder, onChange,
 }) {
   return (
     <Input
+      type={tag}
       name={name}
       value={value}
       placeholder={placeholder}
@@ -16,6 +17,7 @@ export default function TextField({
 }
 
 TextField.propTypes = {
+  tag: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
