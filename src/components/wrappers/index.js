@@ -13,14 +13,13 @@ export const StyleWrapperContainer = styled.main`
 
     ${breakpointsMedia({
     xs: css`
-        font-family: 'Rubik', sans-serif;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-top: 18px;
-        
-        `,
+      font-family: 'Rubik', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    `,
 
     sm: css`
         display: flex;

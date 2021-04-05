@@ -4,6 +4,7 @@ import React from 'react';
 import styled, { createGlobalStyle, css } from 'styled-components';
 import propTypes from 'prop-types';
 import { motion } from 'framer-motion';
+import StyledForm from '../../forms/StyleForm';
 
 const FormWapper = styled.div`
     position: fixed;
@@ -38,48 +39,50 @@ const FormWapper = styled.div`
 
 const Scroll = createGlobalStyle`
 html, body {
-        overflow-y: hidden;
-    }
+    overflow-y: hidden;
+  }
 `;
 
 // eslint-disable-next-line react/prop-types
 function Modal({ isOpen, onClose, children }) {
   return (
-    <FormWapper
-      isOpen={isOpen}
-      onClick={(event) => {
-        const isSafeArea = event.target.closest('[data-modal-safe-area="true"]');
-        if (!isSafeArea) {
-          onClose();
-        }
-      }}
-    >
-      {isOpen && <Scroll />}
-      <motion.div
-        variants={{
-          open: {
-            x: 0,
-          },
-          closed: {
-            y: '100%',
-          },
-        }}
-        animate={
-             isOpen ? 'open' : 'closed'
-            }
-        transition={{
-          duration: 0.8,
-        }}
-        style={{
-          display: 'flex',
-          flex: 1,
+    <>
+      <FormWapper
+        isOpen={isOpen}
+        onClick={(event) => {
+          const isSafeArea = event.target.closest('[data-modal-safe-area="true"]');
+          if (!isSafeArea) {
+            onClose();
+          }
         }}
       >
-        {children({
-          'data-modal-safe-area': 'true',
-        })}
-      </motion.div>
-    </FormWapper>
+        {isOpen && <Scroll />}
+        <motion.div
+          variants={{
+            open: {
+              x: 0,
+            },
+            closed: {
+              y: '100%',
+            },
+          }}
+          animate={
+             isOpen ? 'open' : 'closed'
+            }
+          transition={{
+            duration: 0.8,
+          }}
+          style={{
+            display: 'flex',
+            flex: 1,
+          }}
+        >
+          {children({
+            'data-modal-safe-area': 'true',
+          })}
+        </motion.div>
+      </FormWapper>
+    </>
   );
 }
 

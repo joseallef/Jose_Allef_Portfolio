@@ -7,7 +7,7 @@ import Header from '../commos/Header';
 import { StyleWrapperContainer } from '../wrappers';
 import WapperRepositorys from './StyleAbout';
 import Footer from '../commos/Footer';
-import addUser from '../../../public/image/addUser.json';
+import addUser from '../../../public/icon/addUser.json';
 import Modal from '../commos/Modal';
 import FormCadastro from '../forms';
 import SEO from '../commos/SEO';
@@ -37,12 +37,12 @@ export default function About({ repositories }) {
           />
         </StyleWrapperContainer.IconButtonModal>
         <WapperRepositorys.History>
-          <WapperRepositorys.Pragraph>
+          <WapperRepositorys.Paragraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at imperdiet urna. Nunc lacinia justo sed augue rutrum cursus. Sed venenatis sem in felis efficitur imperdiet. Etiam dignissim neque vel facilisis facilisis. Morbi vel ligula eros. Nulla dictum porta ante, in luctus nulla dapibus quis. Mauris ipsum arcu, dignissim a felis non, eleifend congue ante.
-          </WapperRepositorys.Pragraph>
-          <WapperRepositorys.Pragraph>
+          </WapperRepositorys.Paragraph>
+          <WapperRepositorys.Paragraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at imperdiet urna. Nunc lacinia justo sed augue rutrum cursus. Sed venenatis sem in felis efficitur imperdiet. Etiam dignissim neque vel facilisis facilisis. Morbi vel ligula eros. Nulla dictum porta ante, in luctus nulla dapibus quis. Mauris ipsum arcu, dignissim a felis non, eleifend congue ante.
-          </WapperRepositorys.Pragraph>
+          </WapperRepositorys.Paragraph>
         </WapperRepositorys.History>
         <WapperRepositorys.AboutTitle>
           Meus repositórios

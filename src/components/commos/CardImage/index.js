@@ -10,7 +10,6 @@ export default function Image() {
         // eslint-disable-next-line react/no-array-index-key
         <Link href={`/project/${project.title}`} key={index}>
           <Card
-            href={`/project/${index}`}
             url={project.image}
             title={project.title}
             link={project.link}

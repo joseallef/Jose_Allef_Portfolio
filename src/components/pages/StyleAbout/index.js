@@ -107,7 +107,7 @@ WapperRepositorys.History = styled.div`
   })}
 `;
 
-WapperRepositorys.Pragraph = styled.p`
+WapperRepositorys.Paragraph = styled.p`
   display: flex;
   margin: 20px;
 `;

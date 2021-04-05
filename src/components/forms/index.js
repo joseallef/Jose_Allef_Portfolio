@@ -4,20 +4,24 @@ import React from 'react';
 import styled from 'styled-components';
 import Lottie from 'lottie-react-web';
 import propTypes from 'prop-types';
-import closeJson from '../../../public/image/close.json';
-import cadSuccess from '../../../public/image/cadSuccess.json';
-import cadError from '../../../public/image/cadError.json';
+import loading from '../../../public/icon/loadind.json';
+import closeJson from '../../../public/icon/close.json';
+import cadSuccess from '../../../public/icon/cadSuccess.json';
+import cadError from '../../../public/icon/cadError.json';
 import StyledForm from './StyleForm';
+import TextField from './TextField';
 
 const StyleContainerModal = styled.div`
-    padding: 20px;
-    color: #000000;
+  padding: 20px;
+  color: #000000;
 `;
 
-function FormContent({ onClose }) {
+function FormContent({
+  onClose,
+}) {
   const [userInfo, setInfo] = React.useState({
-    email: '',
     nome: '',
+    email: '',
     mensagem: '',
   });
 
@@ -38,6 +42,12 @@ function FormContent({ onClose }) {
     });
   }
 
+  function clearData() {
+    setInfo({
+      ...userInfo, nome: '', email: '', mensagem: '',
+    });
+  }
+
   const isFormValid = userInfo.email.length === 0
    || userInfo.nome.length === 0 || userInfo.mensagem.length === 0;
 
@@ -45,6 +55,7 @@ function FormContent({ onClose }) {
     <StyleContainerModal>
       <StyledForm.Span
         onClick={() => {
+          setStatus(formStates.DEFAULT);
           onClose();
         }}
       >
@@ -62,10 +73,11 @@ function FormContent({ onClose }) {
         onSubmit={(event) => {
           event.preventDefault();
           setFormSubmited(true);
+          setStatus(formStates.LOADING);
           const dataUser = {
-            name: 'Allef',
-            email: 'teste@teste.com',
-            message: 'Deixe sua sugestão',
+            name: userInfo.nome,
+            email: userInfo.email,
+            message: userInfo.mensagem,
           };
 
           fetch('https://contact-form-api-jamstack.herokuapp.com/message', {
@@ -79,10 +91,12 @@ function FormContent({ onClose }) {
               if (response.ok) {
                 return response.json();
               }
+              setStatus(formStates.ERROR);
               throw new Error('Não foi possivel cadastrar!');
             })
             .then((res) => {
               setStatus(formStates.DONE);
+              clearData();
               return res;
             })
             .catch((error) => {
@@ -91,8 +105,20 @@ function FormContent({ onClose }) {
             });
         }}
       >
-        <StyledForm.Input type="text" name="nome" value={userInfo.nome} placeholder="Nome" onChange={hableChange} />
-        <StyledForm.Input type="email" name="email" value={userInfo.email} placeholder="E-mail" onChange={hableChange} />
+        <TextField
+          type="text"
+          name="nome"
+          value={userInfo.nome}
+          placeholder="Nome"
+          onChange={hableChange}
+        />
+        <TextField
+          type="email"
+          name="email"
+          value={userInfo.nome}
+          placeholder="E-mail"
+          onChange={hableChange}
+        />
         <StyledForm.TextArea name="mensagem" value={userInfo.mensagem} placeholder="Mensagem" onChange={hableChange} />
         <StyledForm.Button type="submit" disabled={isFormValid}>
           ENVIAR
@@ -101,6 +127,18 @@ function FormContent({ onClose }) {
           </StyledForm.IconButton>
         </StyledForm.Button>
         <StyledForm.MessageCad>
+          {isFormSubmited && status === formStates.LOADING && (
+          <>
+            <Lottie
+              width="50px"
+              options={{
+                animationData: loading,
+                loop: false,
+              }}
+            />
+            Enviando aguarde...
+          </>
+          )}
           {isFormSubmited && status === formStates.DONE && (
           <>
             <Lottie
@@ -110,7 +148,7 @@ function FormContent({ onClose }) {
                 loop: false,
               }}
             />
-            Cadastro Realizado com sucesso!
+            Enviado com sucesso!
           </>
           )}
           {isFormSubmited && status === formStates.ERROR && (
@@ -122,7 +160,7 @@ function FormContent({ onClose }) {
                 loop: false,
               }}
             />
-            Erro ao Cadastrar
+            Erro ao Enviar
           </>
           )}
         </StyledForm.MessageCad>
@@ -136,12 +174,16 @@ FormContent.prototype = {
   mensagem: propTypes.string.isRequired,
 };
 
-export default function FormCadastro({ propsDoModal, onClose }) {
+export default function FormCadastro({
+  propsDoModal, onClose,
+}) {
   return (
     <StyledForm
       {...propsDoModal}
     >
-      <FormContent onClose={onClose} />
+      <FormContent
+        onClose={onClose}
+      />
     </StyledForm>
   );
 }
