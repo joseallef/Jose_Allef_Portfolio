@@ -106,14 +106,14 @@ function FormContent({
         }}
       >
         <TextField
-          type="text"
+          tag="text"
           name="nome"
           value={userInfo.nome}
           placeholder="Nome"
           onChange={hableChange}
         />
         <TextField
-          type="email"
+          tag="email"
           name="email"
           value={userInfo.email}
           placeholder="E-mail"
