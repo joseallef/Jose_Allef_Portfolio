@@ -115,7 +115,7 @@ function FormContent({
         <TextField
           type="email"
           name="email"
-          value={userInfo.nome}
+          value={userInfo.email}
           placeholder="E-mail"
           onChange={hableChange}
         />
