@@ -11,13 +11,15 @@ const StyleTitleCard = styled.h2`
 
 const StyleDescriptionCard = styled.p`
   margin: 0px;
+  padding: 2px;
   text-align: center;
   vertical-align: 50px;
+  width: 100%;
   padding-bottom: 20px;
 `;
 
 // eslint-disable-next-line react/prop-types
-export default function TitleCard({ description, title }) {
+export default function TitleCard({ description = '', title }) {
   return (
     <>
       <StyleTitleCard>

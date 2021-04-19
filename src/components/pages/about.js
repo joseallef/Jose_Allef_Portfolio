@@ -4,7 +4,7 @@
 import React from 'react';
 import Lottie from 'lottie-react-web';
 import Header from '../commos/Header';
-import { StyleWrapperContainer } from '../wrappers';
+import { StyleWrapperContainer } from '../wrappers/StyleWrapperContainer';
 import WapperRepositorys from './StyleAbout';
 import Footer from '../commos/Footer';
 import addUser from '../../../public/icon/addUser.json';

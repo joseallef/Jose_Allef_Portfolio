@@ -18,6 +18,8 @@
     "commitizen": "^4.2.3",
     "eslint-plugin-jest": "^24.3.3",
     "framer-motion": "^3.10.0",
+    "graphql": "^15.5.0",
+    "graphql-request": "^3.4.0",
     "jest": "^26.6.3",
     "lottie-react-web": "^2.2.2",
     "next": "latest",

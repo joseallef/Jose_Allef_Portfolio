@@ -6,13 +6,12 @@ import ProjectCard from '../../src/components/ProjectCard';
 
 export default function Projects({ project }) {
   const {
-    image, title, description, link,
+    img, description, link,
   } = project;
   return (
     <>
       <ProjectCard
-        image={image}
-        title={title}
+        image={img[0].url}
         description={description}
         link={link}
       />

@@ -8,11 +8,11 @@ const links = [
   },
   {
     text: 'Sobre mim',
-    url: 'sobre',
+    url: '/sobre',
   },
   {
     text: 'Contato',
-    url: 'contato',
+    url: '/contato',
   },
 ];
 

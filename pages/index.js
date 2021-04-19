@@ -3,18 +3,27 @@ import React from 'react';
 import Lottie from 'lottie-react-web';
 import Capa from '../src/components/Capa';
 import Header from '../src/components/commos/Header';
-import { StyleWrapperContainer } from '../src/components/wrappers';
+import { StyleWrapperContainer } from '../src/components/wrappers/StyleWrapperContainer';
 import SectionTitle from '../src/components/commos/SectionTitle';
-import Image from '../src/components/commos/CardImage';
 import Footer from '../src/components/commos/Footer';
 import Modal from '../src/components/commos/Modal';
 import FormCadastro from '../src/components/forms';
 import addUser from '../public/icon/addUser.json';
 import SEO from '../src/components/commos/SEO';
+import Card from '../src/components/commos/Card';
+import { getContent } from '../src/components/screens/ContentProjects';
 
-export default function Home() {
+export const getStaticProps = async () => {
+  const allPageProjects = await getContent();
+
+  return {
+    props: allPageProjects,
+  };
+};
+
+// eslint-disable-next-line react/prop-types
+export default function Home({ allPageProjects }) {
   const [isModalOpen, setModalState] = React.useState(false);
-
   return (
     <>
       <SEO headTitle="Home" />
@@ -23,7 +32,9 @@ export default function Home() {
 
       <StyleWrapperContainer>
         <SectionTitle />
-        <Image />
+        <Card
+          projects={allPageProjects}
+        />
 
         <StyleWrapperContainer.Div>
           <StyleWrapperContainer.ButtonModal
@@ -44,6 +55,7 @@ export default function Home() {
         </StyleWrapperContainer.Div>
       </StyleWrapperContainer>
 
+      <Footer />
       <Modal
         isOpen={isModalOpen}
         onClose={() => {
@@ -59,7 +71,6 @@ export default function Home() {
           />
         )}
       </Modal>
-      <Footer />
     </>
   );
 }

@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { StyleWrapperContainer } from '../src/components/wrappers';
+import { StyleWrapperContainer } from '../src/components/wrappers/StyleWrapperContainer';
 import Header from '../src/components/commos/Header';
 import Footer from '../src/components/commos/Footer';
+import SEO from '../src/components/commos/SEO';
 
 const Span = styled.span`
   display: block;
@@ -27,6 +28,7 @@ const SvgPage = styled.img`
 export default function Page404() {
   return (
     <>
+      <SEO headTitle="Not found" />
       <Header />
       <StyleWrapperContainer>
         <Span>404 Page Not Found</Span>

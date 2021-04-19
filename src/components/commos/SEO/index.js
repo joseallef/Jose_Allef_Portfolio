@@ -14,6 +14,7 @@ export default function SEO({ headTitle }) {
   return (
     <Head>
       <title>{title}</title>
+      <link rel="shortcut icon" href="/icon/icon.ico" />
       <meta name="title" content={title} />
       <meta name="description" content={description} />
 

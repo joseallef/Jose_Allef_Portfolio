@@ -4,35 +4,34 @@ import React from 'react';
 import styled, { createGlobalStyle, css } from 'styled-components';
 import propTypes from 'prop-types';
 import { motion } from 'framer-motion';
-import StyledForm from '../../forms/StyleForm';
 
 const FormWapper = styled.div`
-    position: fixed;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    align-items: stretch;
-    background: rgba(0,0,0,0.1);
-    margin: auto;
-    overflow: hidden;
-    transition: .3s;
-    z-index: 100;
-    text-align: center;
-    color: #fff;
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: stretch;
+  background: rgba(0,0,0,0.1);
+  margin: auto;
+  overflow: hidden;
+  transition: .3s;
+  z-index: 100;
+  text-align: center;
+  color: #fff;
 
-    ${({ isOpen }) => {
+  ${({ isOpen }) => {
     if (isOpen) {
       return css`
-              opacity: 1;
-              pointer-events: all;
-            `;
+      opacity: 1;
+      pointer-events: all;
+    `;
     }
 
     return css`
-            opacity: 0;
-            pointer-events: none;
-        `;
+    opacity: 0;
+    pointer-events: none;
+  `;
   }}
  
 `;

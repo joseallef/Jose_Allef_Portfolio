@@ -1,9 +1,7 @@
 /* eslint-disable no-param-reassign */
 import React from 'react';
-import db from '../../db.json';
+import { getContent } from '../../src/components/screens/ContentProjects';
 import Projects from '.';
-
-const { projects } = db;
 
 export default function PageProject(props) {
   return (
@@ -15,7 +13,9 @@ export default function PageProject(props) {
 }
 
 export async function getStaticProps({ params }) {
-  const projecDb = projects.reduce((start, project) => {
+  const res = await getContent();
+
+  const projects = res.allPageProjects.reduce((start, project) => {
     if (project.title === params.id) {
       start = project;
     }
@@ -23,15 +23,16 @@ export async function getStaticProps({ params }) {
   }, []);
   return {
     props: {
-      project: projecDb,
+      project: projects,
     }, // will be passed to the page component as props
   };
 }
 
 export async function getStaticPaths() {
-  const id = projects.reduce((start, project) => {
-    const model = [{ params: { id: project.title } }];
-    return [...start, ...model];
+  const response = await getContent();
+  const id = response.allPageProjects.reduce((project, start) => {
+    const model = [{ params: { id: start.title } }];
+    return [...project, ...model];
   }, []);
   return {
     paths: id,
