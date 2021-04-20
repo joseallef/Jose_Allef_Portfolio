@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import NavBar from '../NavBar';
 
-const HeaderStyle = styled.nav`
+const HeaderStyle = styled.header`
     width: 100%;
     height: 50px;
     background: #999;
@@ -12,8 +12,16 @@ const HeaderStyle = styled.nav`
     list-style: none;
 
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
+    & a {
+      padding:10px;
+    }
+    & a:hover {
+      background: #888;
+      border-radius: 2px;
+    }
 
 `;
 

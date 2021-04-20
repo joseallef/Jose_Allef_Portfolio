@@ -1,40 +1,55 @@
-/* eslint-disable no-param-reassign */
 import React from 'react';
-import db from '../../db.json';
+import PropTypes, { node } from 'prop-types';
+import { getContent } from '../../src/components/screens/ContentProjects';
 import Projects from '.';
 
-const { projects } = db;
-
-export default function PageProject(props) {
+export default function PageProject({ project }) {
+  const {
+    title, description, link,
+  } = project;
+  const img = project.img[0].url;
   return (
     <Projects
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      {...props}
+      title={title}
+      description={description}
+      link={link}
+      img={img}
     />
   );
 }
 
 export async function getStaticProps({ params }) {
-  const projecDb = projects.reduce((start, project) => {
+  const res = await getContent();
+
+  const projects = res.allPageProjects.reduce((start, project) => {
     if (project.title === params.id) {
+      // eslint-disable-next-line no-param-reassign
       start = project;
     }
     return start;
   }, []);
   return {
     props: {
-      project: projecDb,
+      project: projects,
     }, // will be passed to the page component as props
   };
 }
 
 export async function getStaticPaths() {
-  const id = projects.reduce((start, project) => {
-    const model = [{ params: { id: project.title } }];
-    return [...start, ...model];
+  const response = await getContent();
+  const id = response.allPageProjects.reduce((project, start) => {
+    const model = [{ params: { id: start.title } }];
+    return [...project, ...model];
   }, []);
   return {
     paths: id,
     fallback: false, // See the "fallback" section below
   };
 }
+PageProject.defaultProps = {
+  project: node,
+};
+
+PageProject.propTypes = {
+  project: PropTypes.node,
+};

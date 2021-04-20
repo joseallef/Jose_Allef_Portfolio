@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 export const Background = styled.div`
-  background-image: url('./image/background-dark.jpg');
+  background-image: url('/image/background-dark.jpg');
   background-size: cover;
   width: 100vw;
   height: 50vh;
@@ -22,7 +22,7 @@ Background.Name = styled.span`
 `;
 
 Background.Image = styled.img`
-  background-image: url('./image/avatar.jpg');
+  background-image: url('/image/avatar.jpg');
   background-size: cover;
   width: 100px;
   height: 100px;

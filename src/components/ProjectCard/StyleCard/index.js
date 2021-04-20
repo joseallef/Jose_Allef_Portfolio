@@ -9,12 +9,16 @@ export const WapperProject = styled.div`
   
   ${breakpointsMedia({
     xs: css`    
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 12px;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     `,
     sm: css`
     max-width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     `,
     lg: css`
     max-width: 90%;
@@ -36,6 +40,7 @@ export const CardProject = styled.div`
   background: rgb(236, 239, 240);
   margin: 15px;
   color: #999;
+  boder: 1px solid black;
 
   &:hover {
     box-shadow: 0 0 12px 3px #AAAAAA;
@@ -45,20 +50,20 @@ export const CardProject = styled.div`
   ${breakpointsMedia({
     xs: css`    
     display: block;
-    width: 100%;
+    justify-content: space-around;
     `,
     sm: css`
     max-width: 100%;
     display: flex;
     `,
     lg: css`
-    max-width: 45%;
+    max-width: 40%;
     `,
     md: css`
-    max-width: 45%;
+    max-width: 40%;
     `,
     xl: css`
-    max-width: 45%;
+    max-width: 35%;
     `,
   })}
 
@@ -90,6 +95,13 @@ export const DescriptionProject = styled.div`
     max-width: 45%;
     `,
   })}
+
+`;
+
+export const Title = styled.h1`
+  display: block;
+  width: 100%;
+  text-align: center;
 
 `;
 

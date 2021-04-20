@@ -16,7 +16,7 @@ const StyleContainerModal = styled.div`
   color: #000000;
 `;
 
-function FormContent({
+export function FormContent({
   onClose,
 }) {
   const [userInfo, setInfo] = React.useState({
@@ -133,7 +133,7 @@ function FormContent({
               width="50px"
               options={{
                 animationData: loading,
-                loop: false,
+                loop: true,
               }}
             />
             Enviando aguarde...
@@ -168,11 +168,6 @@ function FormContent({
     </StyleContainerModal>
   );
 }
-FormContent.prototype = {
-  name: propTypes.string.isRequired,
-  email: propTypes.string.isRequired,
-  mensagem: propTypes.string.isRequired,
-};
 
 export default function FormCadastro({
   propsDoModal, onClose,
@@ -187,3 +182,9 @@ export default function FormCadastro({
     </StyledForm>
   );
 }
+
+FormContent.prototype = {
+  name: propTypes.string.isRequired,
+  email: propTypes.string.isRequired,
+  mensagem: propTypes.string.isRequired,
+};

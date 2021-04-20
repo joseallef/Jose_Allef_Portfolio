@@ -7,6 +7,7 @@ describe('testing form', () => {
     const onChange = jest.fn();
     render(
       <TextField
+        tag="input"
         name="nome"
         value="Allef"
         placeholder="Nome"
@@ -15,6 +16,7 @@ describe('testing form', () => {
     );
     const res = (
       <TextField
+        tag="input"
         name="nome"
         value="Allef"
         placeholder="Nome"
@@ -28,6 +30,7 @@ describe('testing form', () => {
     test('renderiza componente campo email', () => {
       render(
         <TextField
+          tag="input"
           placeholder="Email"
           value="joseallef@gmail.com"
           onChange={() => {}}
