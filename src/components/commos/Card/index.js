@@ -8,7 +8,7 @@ export default function Card({ projects }) {
   return (
     <>
       {projects.map((project) => (
-        <Link href={`/projects/${project.title}`} key={project.title}>
+        <Link href={`/project/${project.title}`} key={project.title}>
           <StyleCard>
             <StyleImage src={project.img[0].url} />
             <TitleCard title={project.title} />

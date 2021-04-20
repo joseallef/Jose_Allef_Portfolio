@@ -1,17 +1,15 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import ProjectCard from '../../src/components/ProjectCard';
 
-export default function Projects({ project }) {
-  const {
-    img, description, link,
-  } = project;
+export default function Projects({
+  title, description, link, img,
+}) {
   return (
     <>
       <ProjectCard
-        image={img[0].url}
+        image={img}
+        title={title}
         description={description}
         link={link}
       />
@@ -19,10 +17,15 @@ export default function Projects({ project }) {
   );
 }
 Projects.defaultProps = {
-  project: {},
+  title: '',
+  description: '',
+  link: '',
+  img: '',
 };
 
 Projects.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  project: PropTypes.object,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  link: PropTypes.string,
+  img: PropTypes.string,
 };

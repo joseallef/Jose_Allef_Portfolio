@@ -12,6 +12,8 @@ const StyleCard = styled.div`
   background: rgb(236, 239, 240);
   margin: 15px;
   color: #999;
+  font-family: small-caps;
+  
 
   &:hover {
     box-shadow: 0 0 12px 3px #AAAAAA;
@@ -20,7 +22,6 @@ const StyleCard = styled.div`
 
   ${breakpointsMedia({
     xs: css`
-      font-family: 'Rubik', sans-serif;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -29,9 +30,6 @@ const StyleCard = styled.div`
     `,
 
     sm: css`
-      display: flex;
-      justify-content: center;
-      aling-items: center;
       width: 60vw;
     
     `,

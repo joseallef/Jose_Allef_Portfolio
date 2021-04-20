@@ -7,6 +7,9 @@ const StyleTitleCard = styled.h2`
   vertical-align: 50px;
   width: 100%; 
   padding: 10px;
+  font-weight: 400;
+  font-family: normal;
+  font-stretch: condensed; 
 `;
 
 const StyleDescriptionCard = styled.p`

@@ -1,13 +1,19 @@
-/* eslint-disable no-param-reassign */
 import React from 'react';
+import PropTypes, { node } from 'prop-types';
 import { getContent } from '../../src/components/screens/ContentProjects';
 import Projects from '.';
 
-export default function PageProject(props) {
+export default function PageProject({ project }) {
+  const {
+    title, description, link,
+  } = project;
+  const img = project.img[0].url;
   return (
     <Projects
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      {...props}
+      title={title}
+      description={description}
+      link={link}
+      img={img}
     />
   );
 }
@@ -17,6 +23,7 @@ export async function getStaticProps({ params }) {
 
   const projects = res.allPageProjects.reduce((start, project) => {
     if (project.title === params.id) {
+      // eslint-disable-next-line no-param-reassign
       start = project;
     }
     return start;
@@ -39,3 +46,10 @@ export async function getStaticPaths() {
     fallback: false, // See the "fallback" section below
   };
 }
+PageProject.defaultProps = {
+  project: node,
+};
+
+PageProject.propTypes = {
+  project: PropTypes.node,
+};
