@@ -1,76 +1,90 @@
-/* eslint-disable no-lone-blocks */
+/* eslint-disable max-len */
 import React from 'react';
-import Lottie from 'lottie-react-web';
-import Capa from '../src/components/Capa';
-import Header from '../src/components/commos/Header';
-import { StyleWrapperContainer } from '../src/components/wrappers/StyleWrapperContainer';
-import SectionTitle from '../src/components/commos/SectionTitle';
-import Footer from '../src/components/commos/Footer';
-import Modal from '../src/components/commos/Modal';
-import FormCadastro from '../src/components/forms';
-import addUser from '../public/icon/addUser.json';
 import SEO from '../src/components/commos/SEO';
-import Card from '../src/components/commos/Card';
-import { getContent } from '../src/components/screens/ContentProjects';
+import Header from '../src/components/commos/Header';
 
-export const getStaticProps = async () => {
-  const allPageProjects = await getContent();
+import { Grid } from '../src/components/foundation/layout/Grid';
 
-  return {
-    props: allPageProjects,
-  };
-};
+import { Wrapper } from '../src/components/commos/Main/StyleMain';
+import Text from '../src/components/foundation/Text';
 
-// eslint-disable-next-line react/prop-types
-export default function Home({ allPageProjects }) {
-  const [isModalOpen, setModalState] = React.useState(false);
+export default function Home() {
   return (
     <>
       <SEO headTitle="Home" />
-      <Capa />
       <Header />
 
-      <StyleWrapperContainer>
-        <SectionTitle />
-        <Card
-          projects={allPageProjects}
-        />
-
-        <StyleWrapperContainer.Div>
-          <StyleWrapperContainer.ButtonModal
-            onClick={() => {
-              setModalState(!isModalOpen);
-            }}
-          >
-            Entrar em Contato
-            <StyleWrapperContainer.IconButtonModal>
-              <Lottie
-                options={{
-                  animationData: addUser,
-                  loop: false,
-                }}
-              />
-            </StyleWrapperContainer.IconButtonModal>
-          </StyleWrapperContainer.ButtonModal>
-        </StyleWrapperContainer.Div>
-      </StyleWrapperContainer>
-
-      <Footer />
-      <Modal
-        isOpen={isModalOpen}
-        onClose={() => {
-          setModalState(false);
-        }}
+      <Grid.Container
+        display="flex"
+        flex="1"
+        justifyContent="center"
+        alignItems="center"
       >
-        {(propsDoModal) => (
-          <FormCadastro
-            propsDoModal={propsDoModal}
-            onClose={() => {
-              setModalState(false);
-            }}
-          />
-        )}
-      </Modal>
+        <Wrapper.Main>
+          <Grid.Row
+            display="flex"
+            flex="1"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Grid.Col
+              value={{
+                xs: 12,
+                md: 6,
+              }}
+              display="flex"
+              flex="1"
+            >
+              {' '}
+              <Wrapper.WrapperImg>
+                <svg width="656" height="656" viewBox="0 0 656 656" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M547 0C547 0 534.5 74 502.5 116.5C470.5 159 439 172.5 348.5 218.5C258 264.5 236 262.5 134 332.5C32 402.5 -26 530 -26 530" stroke="#454666" />
+                  <path d="M596 0C596 0 582.431 84.1925 547.695 132.546C512.958 180.9 478.764 196.259 380.525 248.595C282.286 300.931 258.405 298.656 147.682 378.297C36.9599 457.939 -26 603 -26 603" stroke="#454666" />
+                  <path d="M655 0C655 0 640.711 91.4528 604.132 143.976C567.552 196.5 531.545 213.184 428.093 270.033C324.642 326.882 299.494 324.41 182.897 410.92C66.3002 497.429 0 655 0 655" stroke="#454666" />
+                </svg>
+
+                <img src="/image/avatar.jpg" alt="" />
+              </Wrapper.WrapperImg>
+            </Grid.Col>
+            {/* <WrapperImg>
+            <img src="/image/avatar.jpg" alt="" />
+          </WrapperImg> */}
+            <Grid.Col
+              value={{
+                xs: 12,
+                md: 6,
+              }}
+              display="flex"
+              flex="1"
+              justifyContent="center"
+              alignItems="center"
+              flexDirection="column"
+            >
+              <Wrapper.Vector>
+                <svg width="785" height="742" viewBox="0 0 785 742" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M409.331 15.2652C216.836 58.524 294.331 -32.4561 142.564 15.2654C-9.20377 62.9868 14.8303 196.357 45.3391 296.143C75.8478 395.929 -21.209 410.751 4.33121 500.044C29.8714 589.336 81.9435 526.848 123.831 673.544C165.719 820.239 317.331 675.044 456.831 724.044C596.331 773.044 759.553 633.215 718.831 537.544C678.11 441.873 766.331 341.044 766.331 341.044C766.331 341.044 836.831 169.802 697.331 98.5437C557.831 27.2852 601.827 -27.9936 409.331 15.2652Z" fill="#2F2D4B" />
+                </svg>
+                <Wrapper.Paragrath>
+                  <Text
+                    tag="h2"
+                    variant="title"
+                  >
+                    Olá, sou o José Allef!
+                  </Text>
+                </Wrapper.Paragrath>
+                <Wrapper.Paragrath>
+                  <Text
+                    tag="p"
+                    variant="paragraph1"
+                  >
+                    Sou formado em analise e desenvolvimento de sistemas pela UNICID, infelizmente não trabalho na areá ainda mais participo com frequência em imersões e mais recente no bootcamp JAMStack da alura, sou apaixonado por tecnologia criar/desenvolver é fascinante, e não costumo desistir fácil diante de obstáculos, geralmente venço os empecilhos diante de tentativas e erros.
+                  </Text>
+                </Wrapper.Paragrath>
+              </Wrapper.Vector>
+            </Grid.Col>
+          </Grid.Row>
+        </Wrapper.Main>
+      </Grid.Container>
     </>
   );
 }

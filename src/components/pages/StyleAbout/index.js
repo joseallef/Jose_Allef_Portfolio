@@ -6,6 +6,8 @@ const WapperRepositorys = styled.div`
   align-items: center;
   text-decoration: none;
   flex: 0 0 100%;
+  max-width: 100%;
+
 
   ${breakpointsMedia({
     xs: css`    
@@ -43,25 +45,26 @@ WapperRepositorys.Repository = styled.div`
     font-size: 18px;
     `,
   })}
-
 `;
 
 WapperRepositorys.Name = styled.span`
   display: block;
   margin-bottom: 5px;
   width: 100%;
+  font-style: italic;
+  font-weight: 200;
 `;
 
 WapperRepositorys.Link = styled.a`
   display: block;
   text-decoration: none;
-  color: ##b3ccff;
-  display: block;
+  color: #b3ccff;
   width: 100%;
-
+  font-weight: 200;
   &:hover {
     color: #bfbfc1;
   }
+  
 `;
 
 WapperRepositorys.About = styled.h1`
@@ -71,9 +74,27 @@ WapperRepositorys.About = styled.h1`
 `;
 
 WapperRepositorys.AboutTitle = styled.h2`
-  display: block;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #b3ccff;
+  margin-top: 60px;
   width: 100%;
-  text-align: center;
+  
+  font-size: 20px;
+
+  font-family: Courier, sans-serif;
+  font-style: italic;
+  font-weight: 700;
+
+
+  ${breakpointsMedia({
+    md: css`
+      font-size: 28px;
+    `,
+    lg: css`
+      font-size: 36px;
+    `,
+  })}
 
 `;
 
@@ -87,7 +108,8 @@ WapperRepositorys.Img = styled.img`
 `;
 
 WapperRepositorys.History = styled.div`
-  display: block;
+  display: flex;
+  justify-content: center;
   margin: 20px;
 
   ${breakpointsMedia({

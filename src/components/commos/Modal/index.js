@@ -2,8 +2,9 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import styled, { createGlobalStyle, css } from 'styled-components';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
+import { StateModal } from '../../wrappers/context';
 
 const FormWapper = styled.div`
   position: fixed;
@@ -12,13 +13,12 @@ const FormWapper = styled.div`
   height: 100%;
   flex-direction: column;
   align-items: stretch;
-  background: rgba(0,0,0,0.1);
+  background: rgba(0,0,0,0.5);
   margin: auto;
   overflow: hidden;
   transition: .3s;
   z-index: 100;
   text-align: center;
-  color: #fff;
 
   ${({ isOpen }) => {
     if (isOpen) {
@@ -44,8 +44,16 @@ html, body {
 
 // eslint-disable-next-line react/prop-types
 function Modal({ isOpen, onClose, children }) {
+  const [isModalOpen, setModalState] = React.useState(isOpen);
   return (
-    <>
+    <StateModal.Provider
+      value={{
+        teste: true,
+        toggleModal: () => {
+          setModalState(isModalOpen);
+        },
+      }}
+    >
       <FormWapper
         isOpen={isOpen}
         onClick={(event) => {
@@ -81,14 +89,14 @@ function Modal({ isOpen, onClose, children }) {
           })}
         </motion.div>
       </FormWapper>
-    </>
+    </StateModal.Provider>
   );
 }
 
 Modal.propTypes = {
-  isOpen: propTypes.bool,
-  onClose: propTypes.func,
-  children: propTypes.func,
+  isOpen: PropTypes.bool,
+  onClose: PropTypes.func,
+  children: PropTypes.func,
 };
 
 export default Modal;

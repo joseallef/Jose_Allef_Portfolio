@@ -9,9 +9,11 @@ const InputWapper = styled.div`
   width: 40vw;
   padding: 12px;
   border-radius: 5px;
-  background: #fff;
-  box-shadow: 0 0 10px 2px #ccc;
+  background: #2F2D4B;
+  box-shadow: 0 0 10px 2px #222;
   overflow: hidden;
+
+  color: #FFF;
 
   ${breakpointsMedia({
     xs: css`
@@ -40,17 +42,18 @@ InputWapper.Button = styled.button`
     font-size: 18px;
     padding: 10px;
     border-radius: 15px;
-    background: #fff;
+    background: rgba(44,77,250,0.43);
     vertical-align: middle;
     width: 150px;
     height: 45px;
+    border: 1px solid rgba(44,77,250,0.23);
 
     &:hover,
     &:focus {
       cursor: not-allowed;
-      background: #999;
-      border-color: #999;
-      box-shadow: 0 0 3px 2px #ccc;
+      background: rgba(44,77,250,0.43);
+      border-color: rgba(44,77,250,0.23);
+      box-shadow: 0 0 3px 2px rgba(44,77,250,0.23);
       outline: none;
     }
 
@@ -60,21 +63,22 @@ InputWapper.Button = styled.button`
         &:hover,
         &:focus {
             cursor: not-allowed;
-            background: #aaa;
-            border-color: #999;
-            box-shadow: 0 0 5px 1px #ccc;
+            background: rgba(44,77,250,0.1);
+            border-color: rgba(44,77,250,0.23);
+            box-shadow: 0 0 5px 1px rgba(44,77,250,0.23);
         }
       `;
     }
 
     return css`
+      background: rgba(44,77,250,0.43);
       &:hover,
       &:focus {
         cursor: pointer;
-        background: #999;
+        background: rgba(44,77,250,0.53);
         color: #fff;
-        border-color: #999;
-        box-shadow: 0 0 5px 1px #ccc;
+        border-color: rgba(44,77,250,0.73);
+        box-shadow: 0 0 5px 1px rgba(44,77,250,0.73);
       }
     `;
   }}
@@ -99,7 +103,7 @@ InputWapper.Span = styled.span`
   margin-top: -10px;
   margin-bottom: 35px;
 
-  font-family: verdana;
+  background: #FFF;
 
   ${breakpointsMedia({
     xs: css`

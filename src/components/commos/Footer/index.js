@@ -2,11 +2,11 @@
 import styled from 'styled-components';
 
 const StyleFooter = styled.footer`
-    position: relative;
+    position: fixed;
     bottom: 0px;
     width: 100%;
     height: 50px;
-    background: #000;
+    background: rgb(0.14,0.15,0.25);;
     font-size: 18px;
     color: #fff;
     padding: 5px;    

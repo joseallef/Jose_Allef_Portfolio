@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { breakpointsMedia } from '../../../theme/Utils/breakpointsMedia';
 
 const StyleTitleCard = styled.h2`
   margin: 0px;
@@ -7,9 +8,19 @@ const StyleTitleCard = styled.h2`
   vertical-align: 50px;
   width: 100%; 
   padding: 10px;
+  font-size: 12px;
   font-weight: 400;
   font-family: normal;
   font-stretch: condensed; 
+
+  ${breakpointsMedia({
+    md: css`
+      font-size: 20px;
+    `,
+    lg: css`
+    
+    `,
+  })}
 `;
 
 const StyleDescriptionCard = styled.p`

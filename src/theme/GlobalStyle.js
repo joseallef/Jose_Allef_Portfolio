@@ -9,13 +9,13 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
+    background: #242540;
   }
   /* Full height layout */
   html, body {
     display: flex;
     min-height: 100vh;
     width: 100%;
-    overflow-x: hidden;
   }
   #__next {
     flex: 1;
