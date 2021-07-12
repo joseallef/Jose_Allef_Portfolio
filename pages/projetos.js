@@ -26,6 +26,7 @@ export const getStaticProps = async () => {
       allProjects,
       repositories,
     },
+    revalidate: 30,
   };
 };
 
