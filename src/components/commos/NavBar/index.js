@@ -3,12 +3,12 @@ import Link from '../Link';
 
 const links = [
   {
-    text: '<ME/>',
+    text: 'Home',
     url: '/',
   },
   {
-    text: 'Sobre mim',
-    url: '/sobre',
+    text: 'Projetos',
+    url: '/projetos',
   },
   {
     text: 'Contato',

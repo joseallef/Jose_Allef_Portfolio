@@ -1,3 +1,5 @@
+import { typographyVariants } from './typographyVariants';
+
 const colors = {
   background: {
     light: {
@@ -35,7 +37,14 @@ const colors = {
     },
   },
   modes: {
-    dark: {},
+    dark: {
+      color: '#FFFFFF',
+      background: '#242540',
+      card: {
+        background: '#565A78',
+        color: '#FFF',
+      },
+    },
   },
 };
 
@@ -47,4 +56,4 @@ const breakpoints = {
   xl: 1200,
 };
 
-export default { colors, breakpoints };
+export default { colors, breakpoints, typographyVariants };

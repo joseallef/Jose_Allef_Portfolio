@@ -13,7 +13,7 @@ import TextField from './TextField';
 
 const StyleContainerModal = styled.div`
   padding: 20px;
-  color: #000000;
+  color: #FFF;
 `;
 
 export function FormContent({

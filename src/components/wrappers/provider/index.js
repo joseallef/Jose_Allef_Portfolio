@@ -1,13 +1,14 @@
 /* eslint-disable no-console */
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import theme from '../../theme';
-import Modal from '../commos/Modal';
-import FormCadastro from '../forms';
+import PaginaInicial from '../../../../pages';
+import theme from '../../../theme';
+import Modal from '../../commos/Modal';
+import FormCadastro from '../../forms';
 
-import { StateModal } from './context';
+import { StateModal } from '../context';
 
-export { StateModal } from './context';
+export { StateModal } from '../context';
 
 // eslint-disable-next-line react/prop-types
 export default function WebSitePageWapper({ isTrue }) {
@@ -42,6 +43,7 @@ export default function WebSitePageWapper({ isTrue }) {
             />
           )}
         </Modal>
+        <PaginaInicial />
       </StateModal.Provider>
     </ThemeProvider>
   );

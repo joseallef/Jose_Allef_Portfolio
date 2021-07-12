@@ -32,6 +32,7 @@ export async function getStaticProps({ params }) {
     props: {
       project: projects,
     }, // will be passed to the page component as props
+    revalidate: 30,
   };
 }
 
