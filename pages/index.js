@@ -4,7 +4,6 @@ import SEO from '../src/components/commos/SEO';
 import Header from '../src/components/commos/Header';
 
 import { Grid } from '../src/components/foundation/layout/Grid';
-
 import { Wrapper } from '../src/components/commos/Main/StyleMain';
 import Text from '../src/components/foundation/Text';
 
@@ -46,9 +45,6 @@ export default function Home() {
                 <img src="/image/avatar.jpg" alt="" />
               </Wrapper.WrapperImg>
             </Grid.Col>
-            {/* <WrapperImg>
-            <img src="/image/avatar.jpg" alt="" />
-          </WrapperImg> */}
             <Grid.Col
               value={{
                 xs: 12,
