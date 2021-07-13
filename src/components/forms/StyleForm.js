@@ -38,26 +38,26 @@ const InputWapper = styled.div`
 `;
 
 InputWapper.Button = styled.button`
-    color: #888;
-    font-size: 18px;
-    padding: 10px;
-    border-radius: 15px;
+  color: #888;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 15px;
+  background: rgba(44,77,250,0.43);
+  vertical-align: middle;
+  width: 150px;
+  height: 45px;
+  border: 1px solid rgba(44,77,250,0.23);
+
+  &:hover,
+  &:focus {
+    cursor: not-allowed;
     background: rgba(44,77,250,0.43);
-    vertical-align: middle;
-    width: 150px;
-    height: 45px;
-    border: 1px solid rgba(44,77,250,0.23);
+    border-color: rgba(44,77,250,0.23);
+    box-shadow: 0 0 3px 2px rgba(44,77,250,0.23);
+    outline: none;
+  }
 
-    &:hover,
-    &:focus {
-      cursor: not-allowed;
-      background: rgba(44,77,250,0.43);
-      border-color: rgba(44,77,250,0.23);
-      box-shadow: 0 0 3px 2px rgba(44,77,250,0.23);
-      outline: none;
-    }
-
-    ${({ disabled }) => {
+  ${({ disabled }) => {
     if (disabled) {
       return css`
         &:hover,
@@ -82,15 +82,28 @@ InputWapper.Button = styled.button`
       }
     `;
   }}
+
+  ${breakpointsMedia({
+    md: css`
+    font-size: 18px;
+    `,
+  })}
 `;
 
 InputWapper.TextArea = styled.textarea`
-    width: 100%;
-    height: 80px;
-    margin-bottom: 17px;
-    resize: none;
-    
+  width: 100%;
+  height: 80px;
+  margin-bottom: 17px;
+  resize: none;
+  padding: 10px;
+  
+  font-size: 16px;
+
+  ${breakpointsMedia({
+    md: css`
       font-size: 20px;
+    `,
+  })}
 
 `;
 

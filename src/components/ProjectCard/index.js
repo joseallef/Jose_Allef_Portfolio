@@ -39,7 +39,7 @@ function ProjectCard({
           {link}
         </MyLink>
       </StyleWrapperContainer>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

@@ -7,7 +7,7 @@ const MenuWrapper = styled.header`
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
-  font-size: 12px;
+  font-size: 18px;
   color: #fff; 
 
   padding-left: 28px;
@@ -20,10 +20,10 @@ const MenuWrapper = styled.header`
 
   ${breakpointsMedia({
     sm: css`
-      font-size: 16px;
+      font-size: 20px;
     `,
     lg: css`
-      font-size: 20px;
+      font-size: 24px;
     `,
   })}
 `;

@@ -11,7 +11,8 @@ export const StyleWrapperContainer = styled.main`
     margin: auto;
     font-size: 12px;
     color: #fff;
-    font-family: 'Rubik', sans-serif;
+    font-family: Courier, sans-serif;
+    margin-bottom: 20px;
 
     ${breakpointsMedia({
     xs: css`
@@ -33,7 +34,7 @@ export const StyleWrapperContainer = styled.main`
         margin-left: auto;
         margin-right: auto;
         max-width: 768px;
-        font-size: 26px;
+        font-size: 22px;
     `,
     lg: css`
         margin-top: 0px;
