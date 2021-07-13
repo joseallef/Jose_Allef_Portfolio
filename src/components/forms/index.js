@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/prop-types */
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Lottie from 'lottie-react-web';
 import propTypes from 'prop-types';
 import loading from '../../../public/icon/loadind.json';
@@ -10,10 +10,27 @@ import cadSuccess from '../../../public/icon/cadSuccess.json';
 import cadError from '../../../public/icon/cadError.json';
 import StyledForm from './StyleForm';
 import TextField from './TextField';
+import { breakpointsMedia } from '../../theme/Utils/breakpointsMedia';
 
 const StyleContainerModal = styled.div`
-  padding: 20px;
+  padding: 15px;
   color: #FFF;
+  font-family: Courier, sans-serif;
+  font-style: italic;
+  font-weight: 200;
+
+  h2 {
+    font-size: 16px;
+
+  }
+
+  ${breakpointsMedia({
+    md: css`
+      h2 {
+        font-size: 18px;  
+      }
+    `,
+  })}
 `;
 
 export function FormContent({

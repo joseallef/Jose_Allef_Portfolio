@@ -34,22 +34,24 @@ export const CardProject = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  box-shadow: 0 0 10px 3px #EEEEEE;
-  border-radius: 5px;
+  box-shadow: 0 0 10px 3px #242540;
   padding: 0px;
-  background: rgb(236, 239, 240);
   margin: 15px;
   color: #999;
-  boder: 1px solid black;
+
+  img {
+    border-radius: 5px;
+    width: 100%;
+    height: 250px
+  }
 
   &:hover {
-    box-shadow: 0 0 12px 3px #AAAAAA;
+    box-shadow: 0 0 12px 3px #4B486F;
     cursor: pointer;
   }
 
   ${breakpointsMedia({
-    xs: css`    
-    display: block;
+    xs: css`
     justify-content: space-around;
     `,
     sm: css`
@@ -71,22 +73,22 @@ export const CardProject = styled.div`
 
 export const DescriptionProject = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  font-size: 25px;
+  font-size: 16px;
   padding: 10px;
 
   ${breakpointsMedia({
     xs: css`    
     display: block;
-    font-size: 16px;
     `,
     sm: css`
     max-width: 100%;
     display: flex;
     `,
     md: css`
-    max-width: 45%;
+      max-width: 45%;
+      font-size: 20px;
     `,
     lg: css`
     max-width: 45%;
@@ -107,4 +109,12 @@ export const Title = styled.h1`
 
 export const MyLink = styled.a`
   font-size: 16px;
+  color: #b3ccff;
+  padding: 10px;
+
+  ${breakpointsMedia({
+    md: css`
+    font-size: 20px;
+    `,
+  })}
 `;

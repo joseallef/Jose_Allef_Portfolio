@@ -10,7 +10,7 @@ export default function SEO({ headTitle }) {
 
   const description = 'With Meta Tags you can edit and experiment with your content then preview how your webpage will look on Google, Facebook, Twitter and more!';
   const image = 'https://metatags.io/ https://www.alura.com.br/assets/img/alura-share.1571848411.png';
-  const urlBase = 'https://jose-allef-jams-tack-alura-allef.vercel.app/';
+  const urlBase = 'https://jose-allef.vercel.app/';
   return (
     <Head>
       <title>{title}</title>
@@ -28,8 +28,8 @@ export default function SEO({ headTitle }) {
       {/* <!-- Open Graph / Linkedin */}
       <meta property="og:title" content={title} />
       <meta property="og:image" content="https://media-exp1.licdn.com/dms/image/C4D03AQHPnxjUugbyHw/profile-displayphoto-shrink_400_400/0/1546436090546?e=1623283200&v=beta&t=hJJAWnx4hp05DsRgWwc9skp5xo-wZhNCrZMaYzyWn2k" />
-      <meta property="og:description" content="Estudante e desenvolvedor apaixonado por tecnologia" />
-      <meta property="og:url" content="linkedin.com/in/jose-allef-17b508170" />
+      <meta property="og:description" content="Estudante e desenvolvedor apaixonado por tecnologia, José Allef, portifólio" />
+      <meta property="og:url" content="linkedin.com/in/josé-allef-17b508170" />
     </Head>
   );
 }
