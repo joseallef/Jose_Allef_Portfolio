@@ -5,7 +5,6 @@ import Image from 'next/image';
 import PropTypes from 'prop-types';
 import { StyleWrapperContainer } from '../wrappers/StyleWrapperContainer';
 import Header from '../commos/Header';
-import Footer from '../commos/Footer';
 import {
   WapperProject, CardProject, DescriptionProject, MyLink, Title,
 } from './StyleCard';
