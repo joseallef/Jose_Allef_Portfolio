@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     background: #242540;
+    overflow-x: hidden;
   }
   /* Full height layout */
   html, body {

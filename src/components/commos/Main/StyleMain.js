@@ -15,7 +15,7 @@ export const WrapperMain = styled.main`
 
 `;
 
-const Main = styled.main` 
+const Main = styled.main`
   background: #242540;
   display: flex;
   justify-content: center;
@@ -104,6 +104,7 @@ const Vector = styled.div`
     }
   `,
     lg: css`
+      margin-top: 0px;
       svg {
         width: 70%;
         height: 70%;

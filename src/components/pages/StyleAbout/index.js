@@ -32,9 +32,6 @@ WapperRepositorys.Repository = styled.div`
   margin: 20px;
   font-size: 10px;
   ${breakpointsMedia({
-    xs: css`
-    font-size: 12px;
-    `,
     sm: css`
     font-size: 14px;
     `,
