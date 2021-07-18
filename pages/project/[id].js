@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes, { node } from 'prop-types';
+import PropTypes from 'prop-types';
 import { getContent } from '../../src/components/screens/ContentProjects';
 import Projects from '.';
 
@@ -48,9 +48,21 @@ export async function getStaticPaths() {
   };
 }
 PageProject.defaultProps = {
-  project: node,
+  project: PropTypes.shape({
+    description: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }),
 };
 
 PageProject.propTypes = {
-  project: PropTypes.node,
+  project: PropTypes.shape({
+    description: PropTypes.string.isRequired,
+    img: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+    })),
+    link: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }),
 };
