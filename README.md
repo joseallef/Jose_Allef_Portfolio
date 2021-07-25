@@ -1,7 +1,6 @@
 <h1 align="center">
   Portfolio site
-  <img src="src/assets/gitPortfolio.gif" />
-  
+  <img src="https://github.com/joseallef/Jose_Allef_JAMStackAlura/blob/master/src/assets/gifPortfolio.gif">  
  </h1>
 
 # Example app with styled-components
