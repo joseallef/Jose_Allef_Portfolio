@@ -24,7 +24,7 @@ function ProjectCard({
             <Image
               src={image}
               alt="texto alternativo"
-              width="400"
+              width="500"
               height="450"
             />
           </CardProject>

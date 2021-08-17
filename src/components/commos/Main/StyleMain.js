@@ -40,7 +40,6 @@ const Main = styled.main`
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
     z-index: 1;
   }
 
@@ -81,11 +80,13 @@ const Vector = styled.div`
   flex-wrap: wrap;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 0;
 
   svg {
     position: absolute;
     display: block;
+    z-index: 0;
+
   }
 
   ${breakpointsMedia({
@@ -121,29 +122,34 @@ const Paragrath = styled.div`
   width: 100%;
   z-index: 2;
   padding: 0px;
+  font-family: Courier,sans-serif;
 
   h2 {
     width: 100%;
     text-align: center;
+    font-weight: 700;
   }
 
   p {
-    text-align: center;
-    width: 80%;
-  }
- 
-
-  ${breakpointsMedia({
+    text-align: center;    
+  
+    ${breakpointsMedia({
+    xs: css`
+        max-width: 90%;
+      `,
     sm: css`
-      font-size: 16px;
-    `,
+        font-size: 16px;
+      `,
     md: css`
-      font-size: 18px;
-    `,
+        font-size: 19px;
+        max-width: 100%;
+      `,
     lg: css`
-      padding: 0px;
-    `,
+        padding: 0px;
+        max-width: 80%;
+      `,
   })}
+  }
 `;
 
 const WrapperImg = styled.div`
@@ -162,6 +168,11 @@ const WrapperImg = styled.div`
     width: 100px;
     height: 100px;
     border-radius: 50%;
+  }
+
+  svg {
+    z-index: 0;
+    width: 100%;
   }
 
 
