@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/prop-types */
 import React from 'react';
+import emailjs from 'emailjs-com';
 import styled, { css } from 'styled-components';
 import Lottie from 'lottie-react-web';
 import propTypes from 'prop-types';
@@ -37,9 +38,9 @@ export function FormContent({
   onClose,
 }) {
   const [userInfo, setInfo] = React.useState({
-    nome: '',
-    email: '',
-    mensagem: '',
+    user_name: '',
+    user_email: '',
+    message: '',
   });
 
   const formStates = {
@@ -61,12 +62,36 @@ export function FormContent({
 
   function clearData() {
     setInfo({
-      ...userInfo, nome: '', email: '', mensagem: '',
+      ...userInfo, user_name: '', user_email: '', message: '',
     });
   }
 
-  const isFormValid = userInfo.email.length === 0
-   || userInfo.nome.length === 0 || userInfo.mensagem.length === 0;
+  function sendEmail(event) {
+    event.preventDefault();
+    setFormSubmited(true);
+    setStatus(formStates.LOADING);
+
+    emailjs.sendForm('service_mtkjt26', 'template_1i6e1oo', event.target, 'user_Mz4IcxoTijJPUXP9GYgIQ')
+      .then((result) => {
+        if (result.status === 200) {
+          return result.json;
+        }
+        setStatus(formStates.ERROR);
+        throw new Error('Não foi possivel cadastrar!');
+      })
+      .then((res) => {
+        setStatus(formStates.DONE);
+        clearData();
+        return res;
+      })
+      .catch((error) => {
+        setStatus(formStates.ERROR);
+        return error;
+      });
+  }
+
+  const isFormValid = userInfo.user_email.length === 0
+   || userInfo.user_name.length === 0 || userInfo.message.length === 0;
 
   return (
     <StyleContainerModal>
@@ -86,57 +111,60 @@ export function FormContent({
       </StyledForm.Span>
       <h2 style={{ display: 'inline' }}>ENVIE SUA MENSAGEM</h2>
 
-      <form
+      {/* <form
         onSubmit={(event) => {
-          event.preventDefault();
-          setFormSubmited(true);
-          setStatus(formStates.LOADING);
-          const dataUser = {
-            name: userInfo.nome,
-            email: userInfo.email,
-            message: userInfo.mensagem,
-          };
+          // event.preventDefault();
+          // setFormSubmited(true);
+          // setStatus(formStates.LOADING);
 
-          fetch('https://contact-form-api-jamstack.herokuapp.com/message', {
-            method: 'POST',
-            headers: {
-              'Content-type': 'application/json',
-            },
-            body: JSON.stringify(dataUser),
-          })
-            .then((response) => {
-              if (response.ok) {
-                return response.json();
-              }
-              setStatus(formStates.ERROR);
-              throw new Error('Não foi possivel cadastrar!');
-            })
-            .then((res) => {
-              setStatus(formStates.DONE);
-              clearData();
-              return res;
-            })
-            .catch((error) => {
-              setStatus(formStates.ERROR);
-              return error;
-            });
+          // const dataUser = {
+          //   name: userInfo.nome,
+          //   email: userInfo.email,
+          //   message: userInfo.mensagem,
+          // };
+
+          // fetch('https://contact-form-api-jamstack.herokuapp.com/message', {
+          // fetch('https://contact-form-api-jamstack.herokuapp.com/message', {
+          //   method: 'POST',
+          //   headers: {
+          //     'Content-type': 'application/json',
+          //   },
+          //   body: JSON.stringify(dataUser),
+          // })
+          //   .then((response) => {
+          //     if (response.ok) {
+          //       return response.json();
+          //     }
+          //     setStatus(formStates.ERROR);
+          //     throw new Error('Não foi possivel cadastrar!');
+          //   })
+          //   .then((res) => {
+          //     setStatus(formStates.DONE);
+          //     clearData();
+          //     return res;
+          //   })
+          //   .catch((error) => {
+          //     setStatus(formStates.ERROR);
+          //     return error;
+          //   });
         }}
-      >
+      > */}
+      <form onSubmit={sendEmail}>
         <TextField
           tag="text"
-          name="nome"
-          value={userInfo.nome}
+          name="user_name"
+          value={userInfo.user_name}
           placeholder="Nome"
           onChange={hableChange}
         />
         <TextField
           tag="email"
-          name="email"
-          value={userInfo.email}
+          name="user_email"
+          value={userInfo.user_email}
           placeholder="E-mail"
           onChange={hableChange}
         />
-        <StyledForm.TextArea name="mensagem" value={userInfo.mensagem} placeholder="Mensagem" onChange={hableChange} />
+        <StyledForm.TextArea name="message" value={userInfo.message} placeholder="Mensagem" onChange={hableChange} />
         <StyledForm.Button type="submit" disabled={isFormValid}>
           ENVIAR
           <StyledForm.IconButton>
@@ -201,7 +229,7 @@ export default function FormCadastro({
 }
 
 FormContent.prototype = {
-  name: propTypes.string.isRequired,
-  email: propTypes.string.isRequired,
+  user_name: propTypes.string.isRequired,
+  user_email: propTypes.string.isRequired,
   mensagem: propTypes.string.isRequired,
 };
