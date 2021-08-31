@@ -44,7 +44,7 @@ export async function getStaticPaths() {
   }, []);
   return {
     paths: id,
-    fallback: false, // See the "fallback" section below
+    fallback: true, // See the "fallback" section below
   };
 }
 PageProject.defaultProps = {

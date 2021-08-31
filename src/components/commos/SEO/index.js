@@ -17,6 +17,7 @@ export default function SEO({ headTitle }) {
       <link rel="shortcut icon" href="/icon/icon.ico" />
       <meta name="title" content={title} />
       <meta name="description" content={description} />
+      <meta name="google-site-verification" content="o-4RJTK3w1ZFzWZYYw3tx0YEYVJJMGn2-r7cW14pYwY" />
 
       {/* <!-- Open Graph / Facebook --> */}
       <meta property="og:type" content="website" />
