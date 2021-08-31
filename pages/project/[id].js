@@ -4,7 +4,6 @@ import { getContent } from '../../src/components/screens/ContentProjects';
 import Projects from '.';
 
 export default function PageProject({ project }) {
-  console.log(project);
   const {
     title, description, link,
   } = project;
