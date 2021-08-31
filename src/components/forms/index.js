@@ -124,7 +124,6 @@ export function FormContent({
           // };
 
           // fetch('https://contact-form-api-jamstack.herokuapp.com/message', {
-          // fetch('https://contact-form-api-jamstack.herokuapp.com/message', {
           //   method: 'POST',
           //   headers: {
           //     'Content-type': 'application/json',

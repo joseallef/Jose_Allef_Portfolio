@@ -5,12 +5,12 @@ import FirmScreenPageObject from '../../../../src/components/screens/FormScreenP
 
 describe('Formulario()', () => {
   it('preencha os campos ', () => {
-    cy.visit('/');
+    cy.visit('/contato/');
 
     const messageScreen = new FirmScreenPageObject(cy);
 
     // abrir o modal
-    messageScreen.openModal();
+    // messageScreen.openModal();
 
     // preecher os campos
     messageScreen.fillMessageForm({ name: 'Allef', email: 'joseallefbs@gmail.com', message: 'Lorem ipsom' });

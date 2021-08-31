@@ -13,11 +13,11 @@ export default class FormScreenPageObject {
     // this.cy.get('form button[type="submit"]')
 
     console.log('Preenche os campos');
-    this.cy.get('form input[name="nome"]').type(name);
+    this.cy.get('form input[name="user_name"]').type(name);
 
-    this.cy.get('form input[name="email"]').type(email);
+    this.cy.get('form input[name="user_email"]').type(email);
 
-    this.cy.get('form textarea[name="mensagem"]').type(message);
+    this.cy.get('form textarea[name="message"]').type(message);
   }
 
   submitMessageForm() {
