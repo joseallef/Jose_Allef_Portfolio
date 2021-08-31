@@ -14,6 +14,7 @@ export const getStaticProps = async () => {
   const allProjects = await getContent();
   const repository = await fetch('https://api.github.com/users/joseallef/repos')
     .then((res) => res.json());
+  console.log(allProjects);
 
   const repositories = repository.filter((myRepositorys) => !myRepositorys.fork)
     .map((myRepository) => ({
