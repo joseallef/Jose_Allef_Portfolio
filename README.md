@@ -3,6 +3,9 @@
   <img src="https://github.com/joseallef/Jose_Allef_JAMStackAlura/blob/master/src/assets/gifPortfolio.gif">  
 </h1>
 
+<h4 align="center"> 
+    :construction:  Projeto em construção  :construction:
+</h4>
 
 # Example app with styled-components
 
