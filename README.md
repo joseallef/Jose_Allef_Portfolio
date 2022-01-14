@@ -21,7 +21,9 @@
 
 
 
-
+## Plataformas
+- [Vercel](https://vercel.com/)
+- [DatoCMS](https://www.datocms.com/)
 
 
 
