@@ -3,7 +3,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import PaginaInicial from '../../../../pages';
 import theme from '../../../theme';
-import Modal from '../../commos/Modal';
+import Modal from '../../commons/Modal';
 import FormCadastro from '../../forms';
 
 import { StateModal } from '../context';
