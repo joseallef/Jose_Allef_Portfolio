@@ -36,9 +36,8 @@ const StyleContainerModal = styled.div`
 
 export function FormContent({
   onClose,
+  ...props
 }) {
-  // const SERVICE = process.env.TEMPLATE;
-  // const TOKEN = process.env.DATO_CMS_TOKEN;
   const [userInfo, setInfo] = React.useState({
     user_name: '',
     user_email: '',
@@ -72,15 +71,12 @@ export function FormContent({
     event.preventDefault();
     setFormSubmitted(true);
     setStatus(formStates.LOADING);
-    // console.log(process.env.DATO_CMS_TOKEN);
-    // console.log(TOKEN);
-    // console.log(process.env.TEMPLATE);
 
     emailjs.sendForm(
-      process.env.SERVICE_ID,
-      process.env.TEMPLATE,
+      props.SERVICE_ID,
+      props.TEMPLATE,
       event.target,
-      process.env.USER_ID,
+      props.USER_ID,
     )
       .then((result) => {
         if (result.status === 200) {
@@ -186,7 +182,7 @@ export function FormContent({
 }
 
 export default function FormCadastro({
-  propsDoModal, onClose,
+  propsDoModal, onClose, ...props
 }) {
   return (
     <StyledForm
@@ -194,13 +190,19 @@ export default function FormCadastro({
     >
       <FormContent
         onClose={onClose}
+        {...props}
       />
     </StyledForm>
   );
 }
 
 FormContent.prototype = {
-  user_name: propTypes.string.isRequired,
-  user_email: propTypes.string.isRequired,
-  mensagem: propTypes.string.isRequired,
+  onClose: propTypes.func,
+  prop: propTypes.object,
 };
+
+// FormContent.prototype = {
+//   user_name: propTypes.string.isRequired,
+//   user_email: propTypes.string.isRequired,
+//   mensagem: propTypes.string.isRequired,
+// };

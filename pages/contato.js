@@ -8,7 +8,7 @@ import Modal from '../src/components/commons/Modal';
 import FormCadastro from '../src/components/forms';
 import { Grid } from '../src/components/foundation/layout/Grid';
 
-export default function PageContato() {
+export default function PageContato(props) {
   const [isModalOpen, setModalState] = React.useState(true);
   return (
     <>
@@ -26,6 +26,8 @@ export default function PageContato() {
             onClose={() => {
               setModalState(false);
             }}
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...props}
           />
         )}
       </Modal>
@@ -65,4 +67,17 @@ export default function PageContato() {
       </Grid.Container>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const { SERVICE_ID } = process.env;
+  const { TEMPLATE } = process.env;
+  const { USER_ID } = process.env;
+  return {
+    props: {
+      SERVICE_ID,
+      TEMPLATE,
+      USER_ID,
+    },
+  };
 }
