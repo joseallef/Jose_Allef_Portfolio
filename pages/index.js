@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
 import React from 'react';
-import SEO from '../src/components/commos/SEO';
-import Header from '../src/components/commos/Header';
+import SEO from '../src/components/commons/SEO';
+import Header from '../src/components/commons/Header';
 
 import { Grid } from '../src/components/foundation/layout/Grid';
-import { Wrapper } from '../src/components/commos/Main/StyleMain';
+import { Wrapper } from '../src/components/commons/Main/StyleMain';
 import Text from '../src/components/foundation/Text';
 
 export default function Home() {
@@ -73,7 +73,7 @@ export default function Home() {
                     tag="p"
                     variant="paragraph1"
                   >
-                    Sou formado em analise e desenvolvimento de sistemas pela UNICID, infelizmente não trabalho na areá ainda mais participo com frequência em imersões e mais recente no bootcamp JAMStack da alura, sou apaixonado por tecnologia criar/desenvolver é fascinante, e não costumo desistir fácil diante de obstáculos, geralmente venço os empecilhos diante de tentativas e erros.
+                    Sou formado em análise e desenvolvimento de sistemas pela UNICID, participo com frequência de imersões, treinamentos e desafios como o ignite da Rocketseat participei também do Bootcamp JAMStack da Alura imersões e etc. Sou apaixonado por tecnologia criar/desenvolver é fascinante não costumo desistir fácil diante de obstáculos, persistência faz parte de mim, geralmente venço os empecilhos diante de tentativas e erros.
                   </Text>
                 </Wrapper.Paragrath>
               </Wrapper.Vector>

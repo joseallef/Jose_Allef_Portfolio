@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { StyleWrapperContainer } from '../src/components/wrappers/StyleWrapperContainer';
-import Header from '../src/components/commos/Header';
-import Footer from '../src/components/commos/Footer';
-import SEO from '../src/components/commos/SEO';
+import Header from '../src/components/commons/Header';
+import Footer from '../src/components/commons/Footer';
+import SEO from '../src/components/commons/SEO';
 
 const Span = styled.span`
   display: block;
