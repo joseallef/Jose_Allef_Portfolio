@@ -1,10 +1,10 @@
 import React from 'react';
 import Lottie from 'lottie-react-web';
-import SEO from '../src/components/commos/SEO';
+import SEO from '../src/components/commons/SEO';
 import { PropsModal } from '../src/components/wrappers/StyleWrapperContainer';
 import addUser from '../public/icon/addUser.json';
-import Header from '../src/components/commos/Header';
-import Modal from '../src/components/commos/Modal';
+import Header from '../src/components/commons/Header';
+import Modal from '../src/components/commons/Modal';
 import FormCadastro from '../src/components/forms';
 import { Grid } from '../src/components/foundation/layout/Grid';
 

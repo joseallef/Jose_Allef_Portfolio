@@ -37,6 +37,8 @@ const StyleContainerModal = styled.div`
 export function FormContent({
   onClose,
 }) {
+  // const SERVICE = process.env.TEMPLATE;
+  // const TOKEN = process.env.DATO_CMS_TOKEN;
   const [userInfo, setInfo] = React.useState({
     user_name: '',
     user_email: '',
@@ -50,10 +52,10 @@ export function FormContent({
     LOADING: 'LOADING',
   };
 
-  const [isFormSubmited, setFormSubmited] = React.useState(false);
+  const [isFormSubmitted, setFormSubmitted] = React.useState(false);
   const [status, setStatus] = React.useState(formStates.DEFAULT);
 
-  function hableChange(event) {
+  function handleChange(event) {
     const fieldName = event.target.getAttribute('name');
     setInfo({
       ...userInfo, [fieldName]: event.target.value,
@@ -68,10 +70,18 @@ export function FormContent({
 
   function sendEmail(event) {
     event.preventDefault();
-    setFormSubmited(true);
+    setFormSubmitted(true);
     setStatus(formStates.LOADING);
+    // console.log(process.env.DATO_CMS_TOKEN);
+    // console.log(TOKEN);
+    // console.log(process.env.TEMPLATE);
 
-    emailjs.sendForm('service_mtkjt26', 'template_1i6e1oo', event.target, 'user_Mz4IcxoTijJPUXP9GYgIQ')
+    emailjs.sendForm(
+      process.env.SERVICE_ID,
+      process.env.TEMPLATE,
+      event.target,
+      process.env.USER_ID,
+    )
       .then((result) => {
         if (result.status === 200) {
           return result.json;
@@ -110,60 +120,22 @@ export function FormContent({
         />
       </StyledForm.Span>
       <h2 style={{ display: 'inline' }}>ENVIE SUA MENSAGEM</h2>
-
-      {/* <form
-        onSubmit={(event) => {
-          // event.preventDefault();
-          // setFormSubmited(true);
-          // setStatus(formStates.LOADING);
-
-          // const dataUser = {
-          //   name: userInfo.nome,
-          //   email: userInfo.email,
-          //   message: userInfo.mensagem,
-          // };
-
-          // fetch('https://contact-form-api-jamstack.herokuapp.com/message', {
-          //   method: 'POST',
-          //   headers: {
-          //     'Content-type': 'application/json',
-          //   },
-          //   body: JSON.stringify(dataUser),
-          // })
-          //   .then((response) => {
-          //     if (response.ok) {
-          //       return response.json();
-          //     }
-          //     setStatus(formStates.ERROR);
-          //     throw new Error('Não foi possivel cadastrar!');
-          //   })
-          //   .then((res) => {
-          //     setStatus(formStates.DONE);
-          //     clearData();
-          //     return res;
-          //   })
-          //   .catch((error) => {
-          //     setStatus(formStates.ERROR);
-          //     return error;
-          //   });
-        }}
-      > */}
       <form onSubmit={sendEmail}>
         <TextField
           tag="text"
           name="user_name"
           value={userInfo.user_name}
           placeholder="Nome"
-          onChange={hableChange}
+          onChange={handleChange}
         />
         <TextField
           tag="email"
           name="user_email"
           value={userInfo.user_email}
           placeholder="E-mail"
-          onChange={hableChange}
+          onChange={handleChange}
         />
-        <StyledForm.TextArea name="message" value={userInfo.message} placeholder="Mensagem" onChange={hableChange} />
+        <StyledForm.TextArea name="message" value={userInfo.message} placeholder="Mensagem" onChange={handleChange} />
         <StyledForm.Button type="submit" disabled={isFormValid}>
           ENVIAR
           <StyledForm.IconButton>
@@ -171,7 +143,7 @@ export function FormContent({
           </StyledForm.IconButton>
         </StyledForm.Button>
         <StyledForm.MessageCad>
-          {isFormSubmited && status === formStates.LOADING && (
+          {isFormSubmitted && status === formStates.LOADING && (
           <>
             <Lottie
               width="50px"
@@ -183,7 +155,7 @@ export function FormContent({
             Enviando aguarde...
           </>
           )}
-          {isFormSubmited && status === formStates.DONE && (
+          {isFormSubmitted && status === formStates.DONE && (
           <>
             <Lottie
               width="50px"
@@ -195,7 +167,7 @@ export function FormContent({
             Enviado com sucesso!
           </>
           )}
-          {isFormSubmited && status === formStates.ERROR && (
+          {isFormSubmitted && status === formStates.ERROR && (
           <>
             <Lottie
               width="50px"

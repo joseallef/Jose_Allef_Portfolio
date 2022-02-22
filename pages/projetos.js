@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes, { shape } from 'prop-types';
-import SEO from '../src/components/commos/SEO';
-import Header from '../src/components/commos/Header';
-import Card from '../src/components/commos/Card';
+import SEO from '../src/components/commons/SEO';
+import Header from '../src/components/commons/Header';
+import Card from '../src/components/commons/Card';
 
 import { getContent } from '../src/components/screens/ContentProjects';
-import SectionTitle from '../src/components/commos/SectionTitle';
+import SectionTitle from '../src/components/commons/SectionTitle';
 import About from '../src/components/pages/about';
-import { WrapperMain } from '../src/components/commos/Main/StyleMain';
+import { WrapperMain } from '../src/components/commons/Main/StyleMain';
 import { Grid } from '../src/components/foundation/layout/Grid';
 
 export const getStaticProps = async () => {
