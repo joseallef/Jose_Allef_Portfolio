@@ -6,6 +6,9 @@ import WrapperRepository from './StyleAbout';
 export default function About({ repositories }) {
   return (
     <>
+      <WrapperRepository.BoxProfile>
+        <img src={repositories[0].avatar} alt="Foto do perfil" />
+      </WrapperRepository.BoxProfile>
       <WrapperRepository.AboutTitle>
         Repositórios
       </WrapperRepository.AboutTitle>

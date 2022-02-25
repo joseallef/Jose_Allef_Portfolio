@@ -25,6 +25,7 @@ export const getStaticProps = async () => {
   const repositories = repository.filter((myRepositorys) => !myRepositorys.fork)
     .map((myRepository) => ({
       name: myRepository.name,
+      avatar: myRepository.owner.avatar_url,
       url: myRepository.html_url,
       forks: myRepository.forks,
       watchers: myRepository.watchers,
@@ -56,6 +57,7 @@ export default function Projects({ allProjects, repositories }) {
         const repositoriesUser = repositoryUser.filter((myRepositorys) => !myRepositorys.fork)
           .map((myRepository) => ({
             name: myRepository.name,
+            avatar: myRepository.owner.avatar_url,
             url: myRepository.html_url,
             forks: myRepository.forks,
             watchers: myRepository.watchers,
