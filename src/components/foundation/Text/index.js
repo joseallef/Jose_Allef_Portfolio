@@ -52,12 +52,14 @@ const TextBase = styled.span`
 export default function Text({
   tag, variant, children, href, cmsKey, ...props
 }) {
+  const color = 'dark';
   if (href) {
     return (
       <TextBase
         as={Link}
         href={href}
         variant={variant}
+        color={color}
         {...props}
       >
         {children}
@@ -65,7 +67,7 @@ export default function Text({
     );
   }
   return (
-    <TextBase as={tag} href={href} variant={variant} {...props}>
+    <TextBase as={tag} href={href} variant={variant} color={color} {...props}>
       {children}
     </TextBase>
   );

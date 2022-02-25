@@ -8,40 +8,28 @@ const StyleTitleCard = styled.h2`
   vertical-align: 50px;
   width: 100%; 
   padding: 10px;
-  font-size: 12px;
-  font-weight: 400;
-  font-family: normal;
-  font-stretch: condensed; 
+  font-size: 16px;
+  font-weight: 600;
+  font-stretch: condensed;
+  padding: 20px;
 
   ${breakpointsMedia({
     md: css`
-      font-size: 20px;
+      font-size: 18px;
     `,
     lg: css`
-    
+      font-size: 20px;
     `,
   })}
 `;
 
-const StyleDescriptionCard = styled.p`
-  margin: 0px;
-  padding: 2px;
-  text-align: center;
-  vertical-align: 50px;
-  width: 100%;
-  padding-bottom: 20px;
-`;
-
 // eslint-disable-next-line react/prop-types
-export default function TitleCard({ description = '', title }) {
+export default function TitleCard({ title }) {
   return (
     <>
       <StyleTitleCard>
         {title}
       </StyleTitleCard>
-      <StyleDescriptionCard>
-        {description}
-      </StyleDescriptionCard>
     </>
   );
 }

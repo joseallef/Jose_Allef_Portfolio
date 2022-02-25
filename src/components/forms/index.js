@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useContext } from 'react';
 import emailjs from 'emailjs-com';
 import styled, { css } from 'styled-components';
 import Lottie from 'lottie-react-web';
@@ -12,6 +12,7 @@ import cadError from '../../../public/icon/cadError.json';
 import StyledForm from './StyleForm';
 import TextField from './TextField';
 import { breakpointsMedia } from '../../theme/Utils/breakpointsMedia';
+import { ThemeApp } from '../wrappers/context';
 
 const StyleContainerModal = styled.div`
   padding: 15px;
@@ -184,9 +185,11 @@ export function FormContent({
 export default function FormCadastro({
   propsDoModal, onClose, ...props
 }) {
+  const { themeApp } = useContext(ThemeApp);
   return (
     <StyledForm
       {...propsDoModal}
+      currentTheme={themeApp}
     >
       <FormContent
         onClose={onClose}

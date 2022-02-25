@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 import { StateModal } from '../../wrappers/context';
 
-const FormWapper = styled.div`
+const FormWrapper = styled.div`
   position: fixed;
   display: flex;
   width: 100%;
@@ -19,6 +19,10 @@ const FormWapper = styled.div`
   transition: .3s;
   z-index: 100;
   text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  
 
   ${({ isOpen }) => {
     if (isOpen) {
@@ -54,7 +58,7 @@ function Modal({ isOpen, onClose, children }) {
         },
       }}
     >
-      <FormWapper
+      <FormWrapper
         isOpen={isOpen}
         onClick={(event) => {
           const isSafeArea = event.target.closest('[data-modal-safe-area="true"]');
@@ -88,7 +92,7 @@ function Modal({ isOpen, onClose, children }) {
             'data-modal-safe-area': 'true',
           })}
         </motion.div>
-      </FormWapper>
+      </FormWrapper>
     </StateModal.Provider>
   );
 }

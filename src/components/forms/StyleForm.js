@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { breakpointsMedia } from '../../theme/Utils/breakpointsMedia';
 
-const InputWapper = styled.div`
+const InputWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,11 +9,20 @@ const InputWapper = styled.div`
   width: 40vw;
   padding: 12px;
   border-radius: 5px;
-  background: #2F2D4B;
   box-shadow: 0 0 10px 2px #222;
   overflow: hidden;
+  background: #2F2D4B;
 
   color: #FFF;
+  ${({ currentTheme }) => {
+    if (currentTheme === 'light') {
+      return css`
+        background: #b3ccff;
+        box-shadow: 0 0 0px 0px #222;
+    `;
+    }
+    return css``;
+  }}
 
   ${breakpointsMedia({
     xs: css`
@@ -37,7 +46,7 @@ const InputWapper = styled.div`
 
 `;
 
-InputWapper.Button = styled.button`
+InputWrapper.Button = styled.button`
   color: #888;
   font-size: 14px;
   padding: 10px;
@@ -71,7 +80,6 @@ InputWapper.Button = styled.button`
     }
 
     return css`
-      background: rgba(44,77,250,0.43);
       &:hover,
       &:focus {
         cursor: pointer;
@@ -90,7 +98,7 @@ InputWapper.Button = styled.button`
   })}
 `;
 
-InputWapper.TextArea = styled.textarea`
+InputWrapper.TextArea = styled.textarea`
   width: 100%;
   height: 80px;
   margin-bottom: 17px;
@@ -107,7 +115,7 @@ InputWapper.TextArea = styled.textarea`
 
 `;
 
-InputWapper.Span = styled.span`
+InputWrapper.Span = styled.span`
   display: inline;
   float: right;
   border: 1px solid black;
@@ -129,16 +137,16 @@ InputWapper.Span = styled.span`
 
 `;
 
-InputWapper.IconButton = styled.div`
+InputWrapper.IconButton = styled.div`
   width: 30px;
   height: 20px;
   display: flex;
   float: right;
 `;
 
-InputWapper.MessageCad = styled.div`
+InputWrapper.MessageCad = styled.div`
   margin-top: 25px;
   font-size: 20px;
 `;
 
-export default InputWapper;
+export default InputWrapper;

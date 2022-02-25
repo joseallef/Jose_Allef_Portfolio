@@ -16,7 +16,6 @@ export const WrapperMain = styled.main`
 `;
 
 const Main = styled.main`
-  background: #242540;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,7 +81,7 @@ const Vector = styled.div`
   height: 100%;
   z-index: 0;
 
-  svg {
+  img {
     position: absolute;
     display: block;
     z-index: 0;
@@ -92,29 +91,29 @@ const Vector = styled.div`
   ${breakpointsMedia({
     sm: css`
     margin-top: 100px;
-      svg {
+    img {
         width: 70%;
         height: 70%;
       }
     `,
     md: css`
     
-    svg {
+    img {
       width: 70%;
       height: 70%;
     }
   `,
     lg: css`
       margin-top: 0px;
-      svg {
-        width: 70%;
-        height: 70%;
+      img {
+        width: 50%;
+        height: 80%;
       }
     `,
   })}
 `;
 
-const Paragrath = styled.div`
+const Paragraph = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -161,6 +160,12 @@ const WrapperImg = styled.div`
   margin-top: 0px;
 
   img {
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  img:not(:first-child) {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -170,16 +175,15 @@ const WrapperImg = styled.div`
     border-radius: 50%;
   }
 
-  svg {
-    z-index: 0;
-    width: 100%;
-    height: 75%;
-  }
-
-
   ${breakpointsMedia({
-    sm: css`
+    md: css`
       img {
+        z-index: 0;
+        width: 65%;
+        height: 70%;
+        position: absolute;
+      }
+      img:not(:first-child) {
         margin-top: 50px;
         display: flex;
         width: 200px;
@@ -191,5 +195,5 @@ const WrapperImg = styled.div`
 `;
 
 export const Wrapper = {
-  Main, Vector, Paragrath, WrapperImg,
+  Main, Vector, Paragraph, WrapperImg,
 };

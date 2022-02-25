@@ -13,6 +13,7 @@ export const StyleWrapperContainer = styled.main`
     color: #fff;
     font-family: Courier, sans-serif;
     margin-bottom: 20px;
+    z-index: 2;
 
     ${breakpointsMedia({
     xs: css`
@@ -54,6 +55,7 @@ const WrapperModal = styled.div`
   width: 100%;
   margin: auto;
   margin: 20px;
+  z-index: 2;
 
   ${breakpointsMedia({
     md: css`
@@ -79,10 +81,12 @@ const ButtonModal = styled.button`
   cursor: pointer;
   margin: auto;
   margin: 20px;
-  transition: border .8s;
+  transition: border .3s;
+  border-bottom: 1px solid rgba(44, 77, 250, 0.23);
+  box-shadow: 0 0 2px 1px #4e69f49c;
 
   &:hover {
-    border-bottom: 1px solid lightgreen;
+    border-bottom: 1px solid #b3ccff;
   }
 
 
@@ -118,10 +122,12 @@ const Links = styled.div`
   cursor: pointer;
   margin: auto;
   margin: 20px;
-  transition: border .8s;
+  transition: border .3s;
+  border-bottom: 1px solid rgba(44, 77, 250, 0.23);
+  box-shadow: 0 0 2px 1px #4e69f49c;
 
   &:hover {
-    border-bottom: 1px solid lightgreen;
+    border-bottom: 1px solid #b3ccff;
   }
 
   img {
@@ -153,6 +159,33 @@ const IconButtonModal = styled.div`
   width: 50px;
 `;
 
+const WrapperSvg = styled.div`
+  z-index: 0;
+  img {
+    position: fixed;
+    width: 100%;
+  }
+
+  ${breakpointsMedia({
+
+    md: css`
+    img {
+      width: 35%;
+
+    }
+    img:nth-child(1) {
+      position: fixed;
+      width: 40%;
+      margin-left: 72%;
+      margin-top: 82px;
+      transform: rotate(341deg)
+    }
+  `,
+    lg: css`
+    `,
+  })}
+`;
+
 export const PropsModal = {
-  WrapperModal, ButtonModal, IconButtonModal, Links,
+  WrapperModal, ButtonModal, IconButtonModal, Links, WrapperSvg,
 };

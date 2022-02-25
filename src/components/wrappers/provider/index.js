@@ -14,16 +14,12 @@ export { StateModal } from '../context';
 export default function WebSitePageWapper({ isTrue }) {
   console.log(isTrue);
   const [isModalOpen, setModalState] = React.useState(isTrue);
-
-  console.log('isModalOpen', isModalOpen);
   return (
     <ThemeProvider theme={theme}>
       <StateModal.Provider
         value={{
-          teste: true,
           toggleModal: () => {
             setModalState(isModalOpen);
-            console.log('isModalOpen', isModalOpen);
           },
         }}
       >
