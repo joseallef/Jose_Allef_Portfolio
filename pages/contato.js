@@ -1,9 +1,9 @@
 import React from 'react';
 import Lottie from 'lottie-react-web';
 import SEO from '../src/components/commons/SEO';
+import Header from '../src/components/commons/Header';
 import { PropsModal } from '../src/components/wrappers/StyleWrapperContainer';
 import addUser from '../public/icon/addUser.json';
-import Header from '../src/components/commons/Header';
 import Modal from '../src/components/commons/Modal';
 import FormCadastro from '../src/components/forms';
 import { Grid } from '../src/components/foundation/layout/Grid';
@@ -14,6 +14,10 @@ export default function PageContato(props) {
     <>
       <SEO headTitle="Contato" />
       <Header />
+      <PropsModal.WrapperSvg>
+        <img src="/image/wrapper-perfiel.svg" alt="Wrapper-perfiel" />
+        <img src="/image/wrapper-perfiel.svg" alt="Wrapper-perfiel" />
+      </PropsModal.WrapperSvg>
       <Modal
         isOpen={isModalOpen}
         onClose={() => {
@@ -64,6 +68,9 @@ export default function PageContato(props) {
             </PropsModal.Links>
           </a>
         </PropsModal.WrapperModal>
+        {/* <PropsModal.WrapperSvg>
+          <img src="/image/wrapper-perfiel.svg" alt="Wrapper-perfiel" />
+        </PropsModal.WrapperSvg> */}
       </Grid.Container>
     </>
   );

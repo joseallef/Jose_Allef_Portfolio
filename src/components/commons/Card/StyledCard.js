@@ -11,19 +11,17 @@ const StyleCard = styled.div`
   padding: 0px;
   background: rgba(44, 77, 250, 0.33);
   margin: 20px;
-  color: #BBB;
+  color: #b3ccff;
   transition: margin-top 0.3s;
-  
 
   &:hover {
     box-shadow: 0 0 8px 3px rgba(44, 77, 250, 0.13);
     cursor: pointer;
-    margin-top: 0.1px;
+    margin-top: -1px;
   }
 
   font-family: Courier, sans-serif;
-  font-style: italic;
-  font-weight: 200;
+  font-weight: 600;
   font-size: 15px;
 
   ${breakpointsMedia({

@@ -2,8 +2,9 @@
 import React from 'react';
 import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
-import { GlobalStyle } from '../src/theme/GlobalStyle';
+import { ToggleTheme } from '../src/theme/GlobalStyle';
 import theme from '../src/theme';
+import { ThemeGlobalApp } from '../src/components/wrappers/context';
 
 // eslint-disable-next-line react/prop-types
 export default function App({ Component, pageProps }) {
@@ -15,9 +16,11 @@ export default function App({ Component, pageProps }) {
         <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;1,400;1,700&family=Inconsolata&display=swap" rel="stylesheet" />
       </Head>
 
-      <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
+        <ThemeGlobalApp>
+          <ToggleTheme />
+          <Component {...pageProps} />
+        </ThemeGlobalApp>
       </ThemeProvider>
     </>
   );

@@ -45,6 +45,9 @@ const colors = {
         color: '#FFF',
       },
     },
+    light: {
+      background: '#fff',
+    },
   },
 };
 

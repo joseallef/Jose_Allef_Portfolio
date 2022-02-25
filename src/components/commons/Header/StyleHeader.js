@@ -61,7 +61,11 @@ const Nav = styled.nav`
   order: 3;  
   list-style: none;
   border-bottom: 1px solid #454666;
-  
+
+  li {
+    border-bottom: 1px solid transparent;
+    transition: .3s;
+  }
 
   ${breakpointsMedia({
     xs: css`
@@ -90,46 +94,15 @@ const Nav = styled.nav`
   })}
 
   li:hover {
-    border-bottom: 1px solid lightgreen;
+    border-bottom: 1px solid #b3ccff;
   }
 `;
 
 const Mode = styled.div`
+  display: flex;
+  justify-content: center;
   order: 2;
   align-items: center;
-  justify-content: flex-end;
-
-  button {
-    border: none; 
-
-    ${({ currentTheme }) => {
-    // useEffect(() => {
-    //   let currentTheme = localStorage.getItem('theme');
-    //   if(currentTheme === 'light'){
-    //     return css`
-    //       background: ${theme.colors.background.light.color}
-    //     `;
-    //   } else {
-    //     return css`
-    //       background: #000;
-    //   `;
-    //   }
-    // }, [currentTheme])
-    if (currentTheme === 'dark') {
-      return css`
-        background: #242540;
-      `;
-    }
-    return css`
-      background: #fff;
-    `;
-  }}
-  }
-
-  svg {
-    cursor: pointer;
-  }
-  
 
   ${breakpointsMedia({
     xs: css`
@@ -149,6 +122,39 @@ const Mode = styled.div`
       width: 30%;
   `,
   })}
+`;
+
+const ButtonToggle = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80px;
+  height: 30px;
+  border-radius: 50px 50px;
+  background: #111;
+
+`;
+const BoxToggle = styled.button`
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  margin-right: 70px;
+  border-radius: 50%;
+  transition: 0.5s;
+  cursor: pointer;
+  border: none;
+  
+  ${({ currentTheme }) => {
+    if (currentTheme === 'dark') {
+      return css`
+        margin-left: 115px;
+      `;
+    }
+    return css`
+        margin-left: 25px;
+      `;
+  }}
+
 `;
 
 const WrapperImg = styled.div`
@@ -182,5 +188,8 @@ const WrapperMain = styled.main`
 `;
 
 export {
-  MenuWrapper, Logo, Nav, Mode, WrapperImg, WrapperMain,
+  MenuWrapper, Logo, Nav, Mode, WrapperImg,
+  WrapperMain,
+  BoxToggle,
+  ButtonToggle,
 };
