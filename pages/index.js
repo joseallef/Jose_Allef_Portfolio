@@ -6,6 +6,7 @@ import Header from '../src/components/commons/Header';
 import { Grid } from '../src/components/foundation/layout/Grid';
 import { Wrapper } from '../src/components/commons/Main/StyleMain';
 import Text from '../src/components/foundation/Text';
+import HomeBio from '../src/components/pages/Home';
 
 export default function Home() {
   return (
@@ -52,7 +53,7 @@ export default function Home() {
               flexDirection="column"
             >
               <Wrapper.Vector>
-                <img src="/image/description-wrapper.svg" alt="Caixa de descrição" />
+                <HomeBio />
                 <Wrapper.Paragraph>
                   <Text
                     tag="h2"

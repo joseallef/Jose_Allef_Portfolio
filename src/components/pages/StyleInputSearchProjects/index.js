@@ -51,9 +51,9 @@ export const WrapperSearch = styled.div`
 
 export const WrapperDialog = styled.div`
   background: #FFFFFF;
-  width: 400px;
+  width: 100%;
   height: 200px;
-  margin-top: 70%;
+  margin: 50% 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,14 +64,20 @@ export const WrapperDialog = styled.div`
     font-family: Courier;
     font-weight: 600;
   }
+  ${breakpointsMedia({
+    md: css`
+      width: 400px;
+    `,
+    lg: css`
+    `,
+  })}
 
 `;
 
 export const Close = styled.div`
   position: absolute;
   display: block;
-  margin-top: 22px;
+  margin-top: -140px;
   cursor: pointer;
-  right: 5px;
-  top: 267px;
+  right: 20px;
 `;
