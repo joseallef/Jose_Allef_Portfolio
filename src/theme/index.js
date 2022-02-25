@@ -46,7 +46,7 @@ const colors = {
       },
     },
     light: {
-      background: '#fff',
+      background: '#f2f2f2',
     },
   },
 };
