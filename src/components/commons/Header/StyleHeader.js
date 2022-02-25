@@ -12,6 +12,7 @@ const MenuWrapper = styled.header`
 
   padding-left: 28px;
   padding-right: 28px;
+  padding-top: 15px;
   
 
   font-family: Courier, sans-serif;
@@ -128,16 +129,24 @@ const ButtonToggle = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 80px;
-  height: 30px;
+  width: 70px;
+  height: 25px;
   border-radius: 50px 50px;
   background: #111;
+
+
+  ${breakpointsMedia({
+    md: css`
+    width: 80px;
+    height: 30px;
+    `,
+  })}
 
 `;
 const BoxToggle = styled.button`
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   margin-right: 70px;
   border-radius: 50%;
   transition: 0.5s;
@@ -147,13 +156,25 @@ const BoxToggle = styled.button`
   ${({ currentTheme }) => {
     if (currentTheme === 'dark') {
       return css`
-        margin-left: 115px;
+        margin-left: 110px;
+        ${breakpointsMedia({
+    md: css`
+            margin-left: 115px;
+          `,
+  })}
       `;
     }
     return css`
-        margin-left: 25px;
+        margin-left: 30px;
       `;
   }}
+
+  ${breakpointsMedia({
+    md: css`
+    width: 30px;
+    height: 30px;
+  `,
+  })}
 
 `;
 

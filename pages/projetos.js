@@ -73,7 +73,7 @@ export default function Projects({ allProjects, repositories }) {
         setModalState(true);
       }
     } else {
-      setMessage({ msg: 'Campo vazio prencha para continuar a pesquisa!:(' });
+      setMessage({ msg: 'Campo vazio, preencha para continuar a pesquisa!:(' });
       setModalState(true);
     }
   }

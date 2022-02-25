@@ -81,7 +81,7 @@ const Vector = styled.div`
   height: 100%;
   z-index: 0;
 
-  img {
+  svg {
     position: absolute;
     display: block;
     z-index: 0;
@@ -91,21 +91,21 @@ const Vector = styled.div`
   ${breakpointsMedia({
     sm: css`
     margin-top: 100px;
-    img {
+    svg {
         width: 70%;
         height: 70%;
       }
     `,
     md: css`
     
-    img {
+    svg {
       width: 70%;
       height: 70%;
     }
   `,
     lg: css`
       margin-top: 0px;
-      img {
+      svg {
         width: 50%;
         height: 80%;
       }
