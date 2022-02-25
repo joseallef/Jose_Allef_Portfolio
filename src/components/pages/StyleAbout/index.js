@@ -27,6 +27,33 @@ const WrapperRepository = styled.div`
   
 `;
 
+WrapperRepository.BoxProfile = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  margin-top: 20px;
+
+  img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  ${breakpointsMedia({
+    xs: css`    
+    `,
+    lg: css`
+      img {
+        width: 150px;
+        height: 150px;
+      }
+    `,
+  })}
+
+`;
+
 WrapperRepository.Repository = styled.div`
   display: flex;
   flex-wrap: wrap;
