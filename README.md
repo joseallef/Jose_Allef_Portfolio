@@ -11,7 +11,7 @@
 - https://jose-allef.vercel.app/
 
 
-## Tecnologias
+## Link
 
 - [NextJS](https://nextjs.org/)
 - [Styled-components](https://styled-components.com/)
