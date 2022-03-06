@@ -85,8 +85,19 @@ const ButtonModal = styled.button`
   border-bottom: 1px solid rgba(44, 77, 250, 0.23);
   box-shadow: 0 0 2px 1px #4e69f49c;
 
+  img {
+    filter: grayscale(1);
+    transition: .2s;
+  }
+
   &:hover {
     border-bottom: 1px solid #b3ccff;
+
+    img {
+      transform: skew(18deg, 11deg);
+      filter: grayscale(1);
+    }
+  
   }
 
 

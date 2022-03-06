@@ -19,30 +19,37 @@ import Modal from '../src/components/commons/Modal';
 
 export const getStaticProps = async () => {
   const allProjects = await getContent();
+  const clientUser = await fetch('https://api.github.com/users/joseallef')
+    .then((res) => res.json());
+
   const repository = await fetch('https://api.github.com/users/joseallef/repos')
     .then((res) => res.json());
 
   const repositories = repository.filter((myRepositorys) => !myRepositorys.fork)
     .map((myRepository) => ({
       name: myRepository.name,
+      login: myRepository.owner.login,
       avatar: myRepository.owner.avatar_url,
       url: myRepository.html_url,
       forks: myRepository.forks,
       watchers: myRepository.watchers,
       description: myRepository.description,
+
     }));
 
   return {
     props: {
       allProjects,
       repositories,
+      clientUser,
     },
     revalidate: 30,
   };
 };
 
-export default function Projects({ allProjects, repositories }) {
+export default function Projects({ allProjects, repositories, clientUser }) {
   const [repository, setRepository] = useState(repositories);
+  const [repoUser, setRepoUser] = useState(clientUser);
   const [isModalOpen, setModalState] = React.useState(false);
   const [message, setMessage] = React.useState({});
   const [nameRepository, setNameRepository] = useState({
@@ -51,6 +58,8 @@ export default function Projects({ allProjects, repositories }) {
 
   async function searchRepository(user) {
     if (user && user.length > 0) {
+      const userClient = await fetch(`https://api.github.com/users/${user}`)
+        .then((res) => res.json());
       const repositoryUser = await fetch(`https://api.github.com/users/${user}/repos`)
         .then((res) => res.json());
       if (repositoryUser.message !== 'Not Found') {
@@ -67,6 +76,7 @@ export default function Projects({ allProjects, repositories }) {
           setMessage({ msg: 'Não há repositório nesse perfil.:(' });
           setModalState(true);
         } else {
+          setRepoUser(userClient);
           setRepository(repositoriesUser);
           setNameRepository({ nameRepo: '' });
         }
@@ -143,7 +153,7 @@ export default function Projects({ allProjects, repositories }) {
               <button type="submit" onClick={() => searchRepository(nameRepository.nameRepo)}>Pesquisar</button>
             </WrapperSearch>
           </BoxInputSearch>
-          <About repositories={repository} />
+          <About repositories={repository} clientUser={repoUser} />
         </WrapperMain>
       </Grid.Container>
     </>
@@ -153,19 +163,26 @@ export default function Projects({ allProjects, repositories }) {
 Projects.defaultProps = {
   allProjects: PropTypes.shape({
     allPageProjects: PropTypes.arrayOf(PropTypes.shape({
-      description: PropTypes.string,
-      link: PropTypes.string,
-      title: PropTypes.string,
+      description: '',
+      link: '',
+      title: '',
       img: PropTypes.arrayOf(shape({
-        id: PropTypes.string,
-        url: PropTypes.string,
+        id: '',
+        url: '',
       })),
     })),
   }),
   repositories: PropTypes.arrayOf(shape({
-    name: PropTypes.string,
-    url: PropTypes.string,
+    name: '',
+    url: '',
   })),
+  clientUser: PropTypes.shape({
+    avatar_url: '',
+    login: '',
+    name: '',
+    followers: 0,
+    following: 0,
+  }),
 };
 
 Projects.propTypes = {
@@ -184,4 +201,11 @@ Projects.propTypes = {
     name: PropTypes.string,
     url: PropTypes.string,
   })),
+  clientUser: PropTypes.shape({
+    avatar_url: PropTypes.string,
+    login: PropTypes.string,
+    name: PropTypes.string,
+    followers: PropTypes.number,
+    following: PropTypes.number,
+  }),
 };

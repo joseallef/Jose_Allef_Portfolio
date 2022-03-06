@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
  * { 
     box-sizing: border-box;
     ${({ currentTheme }) => (currentTheme === 'light' ? 'color: black!important;' : '')}
+    font-family: Courier,sans-serif;
   }
   html,
   body {

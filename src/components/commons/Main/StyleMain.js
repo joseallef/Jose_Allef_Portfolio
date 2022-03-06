@@ -149,6 +149,30 @@ const Paragraph = styled.div`
       `,
   })}
   }
+
+  div {
+    position: relative;
+    overflow: hidden;
+    width: 90%;
+    font-size: 24px;
+  }
+  div::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    border-left: 2px solid #b3ccff;
+    animation: typing 4.5s steps(20) infinite;
+    background: ${({ themeApp }) => (themeApp === 'light' ? '#b3ccff' : '#1e305f')}
+  }
+
+  @keyframes typing {
+    100%{
+      left: 100%;
+      margin: 0 -35px 0 35px;
+    }
+  }
 `;
 
 const WrapperImg = styled.div`

@@ -18,21 +18,30 @@ const StyleContainerModal = styled.div`
   padding: 15px;
   color: #FFF;
   font-family: Courier, sans-serif;
-  font-style: italic;
-  font-weight: 200;
+  font-weight: 600;
 
+`;
+
+const WrapperInfos = styled.div`
   h2 {
-    font-size: 16px;
-
+    font-size: 18px;
+    font-weight: 700;
+    color: #b3ccff;
   }
-
+  p {
+    font-size: 14px;
+  }
   ${breakpointsMedia({
     md: css`
       h2 {
-        font-size: 18px;  
+        font-size: 24px;  
+      }
+      p {
+        font-size: 16px;
       }
     `,
   })}
+
 `;
 
 export function FormContent({
@@ -116,7 +125,10 @@ export function FormContent({
           }}
         />
       </StyledForm.Span>
-      <h2 style={{ display: 'inline' }}>ENVIE SUA MENSAGEM</h2>
+      <WrapperInfos>
+        <h2>Vamos bater um papo?</h2>
+        <p>Vamos criar juntos, soluções de projetos que corresponda suas necessidades?</p>
+      </WrapperInfos>
       <form onSubmit={sendEmail}>
         <TextField
           tag="text"

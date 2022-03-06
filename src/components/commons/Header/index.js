@@ -17,7 +17,9 @@ export default function Header() {
         <img src="/image/Logo.svg" alt="" />
       </Logo>
       <Nav>
-        <NavBar />
+        <ul>
+          <NavBar />
+        </ul>
       </Nav>
       <Mode
         currentTheme={currentTheme}

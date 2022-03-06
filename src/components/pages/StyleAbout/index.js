@@ -29,11 +29,14 @@ const WrapperRepository = styled.div`
 
 WrapperRepository.BoxProfile = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  width: 100%;
-
+  width: 90%;
+  border-radius: 5px;
+  font-family: Courier,sans-serif;
   margin-top: 20px;
+
+  background: #2c4dfa54;
 
   img {
     width: 100px;
@@ -41,10 +44,14 @@ WrapperRepository.BoxProfile = styled.div`
     border-radius: 50%;
   }
 
+ 
+
   ${breakpointsMedia({
-    xs: css`    
+    md: css`
+      width: 70%;
     `,
     lg: css`
+      width: 50%;
       img {
         width: 150px;
         height: 150px;
@@ -54,17 +61,94 @@ WrapperRepository.BoxProfile = styled.div`
 
 `;
 
+WrapperRepository.InfoUser = styled.div`
+  display: flex;
+  width: 50%;
+  font-size: 12px;
+  span {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      margin-right: 7px;
+      color: #b3ccff;
+      
+      font-weight: 700;
+    }
+  }
+
+  ${breakpointsMedia({
+    md: css`
+      font-size: 14px;
+    `,
+    lg: css`
+      font-size: 16px;
+    `,
+  })}
+
+`;
+WrapperRepository.InfoUserRepoNames = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  span {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      margin-right: 7px;
+      color: #b3ccff;
+      
+      font-weight: 700;
+    }
+  }
+
+`;
+
+WrapperRepository.InfoUserNames = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  
+  span {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      margin-right: 7px;
+      color: #b3ccff;
+      
+      font-weight: 700;
+    }
+  }
+
+`;
+
 WrapperRepository.Repository = styled.div`
   display: flex;
   flex-wrap: wrap;
   text-decoration: none;
-  margin: 20px;
+  margin: 7px;
   font-size: 12px;
   width: 100%;
   background: rgba(44,77,250,0.33);
   border-radius: 5px;
   padding: 20px;
   text-align: center;
+  transition: .3s;
+  transform: scale(0.9);
+
+  &:hover {
+    transform: scale(0.95);
+    
+  }
 
 
   ${breakpointsMedia({
@@ -78,6 +162,7 @@ WrapperRepository.Repository = styled.div`
     font-size: 18px;
     `,
   })}
+
 `;
 
 WrapperRepository.NameLink = styled.div`

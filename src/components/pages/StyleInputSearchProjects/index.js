@@ -6,8 +6,8 @@ export const BoxInputSearch = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  border-top: 1px solid #b3ccff;
   margin-top: 50px;
-
 `;
 
 export const WrapperSearch = styled.div`

@@ -59,14 +59,20 @@ const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  order: 3;  
-  list-style: none;
+  order: 3; 
   border-bottom: 1px solid #454666;
 
-  li {
-    border-bottom: 1px solid transparent;
-    transition: .3s;
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    order: 3;
+    padding: 0;
   }
+
 
   ${breakpointsMedia({
     xs: css`
@@ -87,16 +93,30 @@ const Nav = styled.nav`
       display: flex;
       justify-content: center;
       align-items: center;
-      left: 0px;
-      gap: 40px;
-
       width: 42%;
+
+      ul {
+        justify-content: space-around;
+      }
     `,
   })}
 
-  li:hover {
-    border-bottom: 1px solid #b3ccff;
+  li {
+    a {
+      border-bottom: 1px solid transparent;
+      transition: .5s;
+      width: 1%;
+    }
+    a:hover {
+
+      border-bottom: 1px solid #b3ccff;
+      width: 100%;
+    }
   }
+`;
+
+Nav.Wrapper = styled.div`
+
 `;
 
 const Mode = styled.div`
