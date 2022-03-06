@@ -7,7 +7,8 @@
     :construction:  Projeto em construção  :construction:
 </h4>
 
-
+## Tecnologias
+- https://jose-allef.vercel.app/
 
 
 ## Tecnologias
