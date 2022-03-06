@@ -6,18 +6,17 @@ const StyleCard = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  box-shadow: 0 0 10px 1px #333;
   border-radius: 5px;
   padding: 0px;
   background: rgba(44, 77, 250, 0.33);
-  margin: 20px;
   color: #b3ccff;
-  transition: margin-top 0.3s;
+  transition:  0.3s;
+  transform: scale(0.8);
 
   &:hover {
     box-shadow: 0 0 8px 3px rgba(44, 77, 250, 0.13);
     cursor: pointer;
-    margin-top: -1px;
+    transform: scale(0.9);
   }
 
   font-family: Courier, sans-serif;
@@ -30,23 +29,22 @@ const StyleCard = styled.div`
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      margin-top: 18px
     `,
 
     sm: css`
       width: 60vw;
-      margin: 15px;
+      height: 100%;
     
     `,
     md: css`
       max-width: 768px;
-      width: 300px; 
+      width: 350px; 
     `,
     lg: css`
       max-width: 992px;
     `,
     xl: css`
-      width: 320px;
+      width: 380px;
       max-width: 1200px;
     `,
   })}
@@ -61,11 +59,11 @@ const StyleImage = styled.img`
 
   ${breakpointsMedia({
     xs: css`
-      height: 200px;
+      height: 280px;
     `,
     xl: css`
-      width: 320px;
-      height: 220px;
+    width: 100%;
+      height: 320px;
   `,
   })}
 `;

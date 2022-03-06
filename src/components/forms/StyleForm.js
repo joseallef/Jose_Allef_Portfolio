@@ -11,7 +11,7 @@ const InputWrapper = styled.div`
   border-radius: 5px;
   box-shadow: 0 0 10px 2px #222;
   overflow: hidden;
-  background: #2F2D4B;
+  background: #2c4dfa54;
 
   color: #FFF;
   ${({ currentTheme }) => {
@@ -102,9 +102,9 @@ InputWrapper.TextArea = styled.textarea`
   width: 100%;
   height: 80px;
   margin-bottom: 17px;
-  resize: none;
+  resize: vertical;
   padding: 10px;
-  
+  border-radius: 5px;
   font-size: 16px;
 
   ${breakpointsMedia({
@@ -116,13 +116,11 @@ InputWrapper.TextArea = styled.textarea`
 `;
 
 InputWrapper.Span = styled.span`
-  display: inline;
+  display: block;
   float: right;
-  border: 1px solid black;
-  border-radius: 90%;
+  border-radius: 50%;
   cursor: pointer;
-  margin-top: -10px;
-  margin-bottom: 35px;
+  margin-top: -12px;
 
   background: #FFF;
 

@@ -1,20 +1,71 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useEffect } from 'react';
+import ReactAudioPlayer from 'react-audio-player';
 import WrapperRepository from './StyleAbout';
 
 // eslint-disable-next-line react/prop-types
-export default function About({ repositories }) {
+export default function About({ repositories, clientUser }) {
+  useEffect(() => {
+    const rep1 = document.querySelectorAll('#rep1');
+    rep1.forEach((repository) => {
+      repository.addEventListener('mouseenter', () => {
+        const audio = document.querySelector('#audio');
+        audio.muted = false;
+        audio.play();
+      });
+    });
+  }, []);
+
   return (
     <>
       <WrapperRepository.BoxProfile>
-        <img src={repositories[0].avatar} alt="Foto do perfil" />
+        <img src={clientUser.avatar_url} alt="Foto do perfil" />
+        <WrapperRepository.InfoUser>
+          <WrapperRepository.InfoUserNames>
+            <span>
+              <p>Usuário:</p>
+            </span>
+            <span>
+              <p>Repos publicos:</p>
+            </span>
+            <span>
+              <p>Seguidores:</p>
+            </span>
+            <span>
+              <p>Seguindo:</p>
+            </span>
+          </WrapperRepository.InfoUserNames>
+          <WrapperRepository.InfoUserRepoNames>
+            <span>
+              {clientUser.login}
+            </span>
+            <span>
+              {clientUser.public_repos}
+            </span>
+            <span>
+              {clientUser.followers}
+            </span>
+            <span>
+              {clientUser.following}
+            </span>
+          </WrapperRepository.InfoUserRepoNames>
+        </WrapperRepository.InfoUser>
       </WrapperRepository.BoxProfile>
       <WrapperRepository.AboutTitle>
         Repositórios
       </WrapperRepository.AboutTitle>
-      <WrapperRepository>
+      <WrapperRepository id="rep">
         {repositories.map((repository) => (
-          <WrapperRepository.Repository key={repository.name}>
+          <WrapperRepository.Repository key={repository.name} id="rep1">
+            {/* <audio autoPlay id="audio">
+              <source src="/audio/efeito-repo.wav" type="audio/ogg" />
+              <source src="/audio/efeito-repo.wav" type="audio/mpeg" />
+            </audio> */}
+            <ReactAudioPlayer
+              src="/audio/efeito-repo2.wav"
+              id="audio"
+              volume={0.1}
+            />
             <WrapperRepository.NameLink>
               <WrapperRepository.Name>
                 {repository.name}

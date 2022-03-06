@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import React from 'react';
+import React, { useContext } from 'react';
 import SEO from '../src/components/commons/SEO';
 import Header from '../src/components/commons/Header';
 
@@ -7,8 +7,10 @@ import { Grid } from '../src/components/foundation/layout/Grid';
 import { Wrapper } from '../src/components/commons/Main/StyleMain';
 import Text from '../src/components/foundation/Text';
 import HomeBio from '../src/components/pages/Home';
+import { ThemeApp } from '../src/components/wrappers/context';
 
 export default function Home() {
+  const { themeApp } = useContext(ThemeApp);
   return (
     <>
       <SEO headTitle="Home" />
@@ -54,12 +56,16 @@ export default function Home() {
             >
               <Wrapper.Vector>
                 <HomeBio />
-                <Wrapper.Paragraph>
+                <Wrapper.Paragraph
+                  themeApp={themeApp}
+                >
                   <Text
                     tag="h2"
                     variant="title"
                   >
-                    Olá, sou o José Allef!
+                    <div>
+                      Olá, sou o José Allef!
+                    </div>
                   </Text>
                 </Wrapper.Paragraph>
                 <Wrapper.Paragraph>
