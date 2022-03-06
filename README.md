@@ -7,11 +7,11 @@
     :construction:  Projeto em construção  :construction:
 </h4>
 
-## Tecnologias
+## Link
 - https://jose-allef.vercel.app/
 
 
-## Link
+## Tecnologias
 
 - [NextJS](https://nextjs.org/)
 - [Styled-components](https://styled-components.com/)
