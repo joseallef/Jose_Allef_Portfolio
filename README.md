@@ -8,7 +8,7 @@
 </h4>
 
 ## Descrição
-- Site de portfólio, funciona como uma "vitrine" de alguns dos projetos que construí ao longo do tempo visando deixar mais visível para pessoas que pouca ou nenhuma familiaridade com Github, ou pior com código!
+- Site de portfólio, funciona como uma "vitrine" de alguns dos projetos que construí ao longo do tempo visando deixar mais visível para pessoas que tem pouca ou nenhuma familiaridade com Github, ou pior com código!
 
 ## Link
 - https://jose-allef.vercel.app/
