@@ -1,11 +1,14 @@
 <h1 align="center">
   <p>Portfolio site</p>
-  <img src="https://github.com/joseallef/Jose_Allef_JAMStackAlura/blob/master/src/assets/gifPortfolio.gif">  
+  <img src="https://user-images.githubusercontent.com/46696111/157259784-91775083-ad4e-4c8c-ac07-f4443d0f2e08.gif">  
 </h1>
 
 <h4 align="center"> 
     :construction:  Projeto em construção  :construction:
 </h4>
+
+## Descrição
+- Site de portfólio, funciona como uma "vitrine" de alguns dos projetos que construí ao longo do tempo visando deixar mais visível para pessoas que tem muita ou nenhuma familiaridade com Github, ou pior com código!
 
 ## Link
 - https://jose-allef.vercel.app/
