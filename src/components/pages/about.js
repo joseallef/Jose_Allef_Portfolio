@@ -62,7 +62,7 @@ export default function About({ repositories, clientUser }) {
               <source src="/audio/efeito-repo.wav" type="audio/mpeg" />
             </audio> */}
             <ReactAudioPlayer
-              src="/audio/efeito-repo2.wav"
+              src="/audio/efeito-repo1.wav"
               id="audio"
               volume={0.1}
             />
