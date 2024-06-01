@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 export default class FormScreenPageObject {
   constructor(cy) {
     this.cy = cy;
