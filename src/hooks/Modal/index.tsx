@@ -86,7 +86,7 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({ children }) => {
               className={`relative p-4 m-4 w-full max-w-3xl transition-transform transform rounded-lg shadow ${themeApp === "dark" ? "bg-slate-900 dark:text-gray-300" : "bg-[#242540] dark:text-slate-300"} duration-300 ${isOpen ? 'scale-100' : 'scale-95'}`}
             >
               <div className="flex items-center p-2 justify-between border-b rounded-t dark:border-gray-600">
-                <h3 className="text-center w-full text-xl font-semibold text-gray-900 dark:text-sky-200">
+                <h3 className="text-center w-full text-lg md:text-xl font-semibold text-gray-900 dark:text-sky-200">
                   {project?.title}
                 </h3>
                 <button
@@ -118,7 +118,7 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({ children }) => {
 
                   <div className="pt-6 md:p-8 text-center md:text-left text-slate-300 border border-sky-800 rounded-md p-2">
                     <blockquote>
-                      <p className="text-lg font-medium">
+                      <p className="text-base md:text-lg font-medium">
                         {project?.description}
                       </p>
                     </blockquote>

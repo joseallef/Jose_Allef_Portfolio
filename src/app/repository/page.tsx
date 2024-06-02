@@ -95,7 +95,7 @@ export default function RepositoryGit() {
           <div className="border-b-2 border-cyan-300 border-spacing-1 w-full"></div>
 
           <div className="text-center w-full my-3">
-            <h1 className='text-sky-100 font-bold text-2xl'>Repositórios</h1>
+            <h1 className='text-sky-100 font-bold text-base md:text-2xl'>Repositórios</h1>
           </div>
 
           <GitRepository repository={repo} loading={loading} />
