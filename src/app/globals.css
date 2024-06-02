@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos globais para personalizar a barra de rolagem */
+::-webkit-scrollbar {
+  width: 8px; /* Largura da barra de rolagem */
+  height: 8px; /* Altura da barra de rolagem horizontal */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #004eb4; /* Cor do "polegar" da barra de rolagem */
+  border-radius: 4px; /* Bordas arredondadas */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #4d98fa3f; /* Cor do "trilho" da barra de rolagem */
+  border-radius: 4px; /* Bordas arredondadas */
+}
