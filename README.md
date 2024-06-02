@@ -18,12 +18,8 @@ Projeto desenvolvido em paralelo com instalura, visando o desafio de implementa-
 ## Tecnologias
 
 - [NextJS](https://nextjs.org/)
-- [Styled-components](https://styled-components.com/)
-- [Lottie](https://www.npmjs.com/package/lottie-web)
-- [EmailJS](https://www.emailjs.com/)
+- [Tailwind](https://tailwindcss.com/)
 - [GraphQL](https://graphcdn.io/)
-- [Lodash](https://www.npmjs.com/package/lodash)
-
 
 
 ## Plataformas
