@@ -1,3 +1,5 @@
+'use client';
+
 import { parseCookies, setCookie } from 'nookies';
 import React, { createContext, useCallback, useEffect, useMemo, useState } from 'react';
 
@@ -13,17 +15,22 @@ export const ThemeApp = createContext<IContextType>({
 
 export function ThemeGlobalApp({ children }: { children: React.ReactNode }) {
   const cookies = parseCookies();
-  const initialTheme = cookies.theme || 'dark';
-  const [themeApp, setThemeApp] = useState<string>(initialTheme);
+  const [themeApp, setThemeApp] = useState<string>('dark');
+
+  const getThemeDevice = useCallback(() => {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }, []);
 
   const toggleTheme = useCallback(() => {
-    const newTheme = themeApp === 'dark' ? 'light' : 'dark';
-    setThemeApp(newTheme);
-    setCookie(null, 'theme', newTheme, {
-      maxAge: 30 * 24 * 60 * 60,
-      path: '/',
+    setThemeApp(prevTheme => {
+      const newTheme = prevTheme === 'dark' ? 'light' : 'dark';
+      setCookie(null, 'theme', newTheme, {
+        maxAge: 30 * 24 * 60 * 60,
+        path: '/',
+      });
+      return newTheme;
     });
-  }, [themeApp]);
+  }, []);
 
   const providers = useMemo(() => ({
     themeApp,
@@ -31,18 +38,9 @@ export function ThemeGlobalApp({ children }: { children: React.ReactNode }) {
   }), [themeApp, toggleTheme]);
 
   useEffect(() => {
-    if (!cookies.theme) {
-      const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      setThemeApp(preferredTheme);
-      setCookie(null, 'theme', preferredTheme, {
-        maxAge: 30 * 24 * 60 * 60,
-        path: '/',
-      });
-    } else {
-      console.log("Theme", cookies.theme)
-      setThemeApp(cookies.theme);
-    }
-  }, []);
+    const theme = cookies.theme || getThemeDevice();
+    setThemeApp(theme);
+  }, [cookies.theme, getThemeDevice]);
 
   return (
     <ThemeApp.Provider value={providers}>

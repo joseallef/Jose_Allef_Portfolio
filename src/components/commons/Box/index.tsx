@@ -1,3 +1,5 @@
+'use client'
+
 import { ThemeApp } from '@components/wrappers/context';
 import React, { ReactNode, useContext } from 'react';
 

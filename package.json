@@ -2,6 +2,9 @@
   "name": "portfolio-jose-allef",
   "version": "2.0.0",
   "main": "src/app/page.ts",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "dev": "next",
     "build": "next build",
