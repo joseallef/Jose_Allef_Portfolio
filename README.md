@@ -54,3 +54,6 @@
 ```bash
   http://localhost:3000
 ```
+## Licença
+
+**MIT**
