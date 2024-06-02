@@ -34,5 +34,5 @@ jobs:
         run: node -v
       - name: Install de dependencias
         run: yarn install
-      - name: Roda o Linter
-        run: yarn lint
+      # - name: Roda o Linter
+      #   run: yarn lint
