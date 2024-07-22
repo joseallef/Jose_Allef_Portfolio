@@ -1,14 +1,14 @@
 export interface ICms {
   allPageProjects: {
     img: {
-      id: number
-      url: string
-    }[]
-    title: string
-    description: string
-    link: string
-  }[]
-};
+      id: number;
+      url: string;
+    }[];
+    title: string;
+    description: string;
+    link: string;
+  }[];
+}
 
 interface IIMage {
   id: number;
@@ -19,7 +19,7 @@ export interface IGetContentCms {
   title: string;
   description: string;
   link: string;
-};
+}
 
 export interface IGetContent {
   allPageProjects: {
@@ -27,6 +27,5 @@ export interface IGetContent {
     title: string;
     description: string;
     link: string;
-  }[]
+  }[];
 }
-

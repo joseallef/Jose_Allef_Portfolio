@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface TextProps {
-  tag?: keyof JSX.IntrinsicElements;
+  tag?: keyof React.JSX.IntrinsicElements;
   variant?: 'paragraph1' | 'smallestException' | 'title';
   children?: React.ReactNode;
   href?: string;
@@ -13,7 +13,6 @@ export const Text: React.FC<TextProps> = ({
   variant = 'paragraph1',
   children,
   href = '',
-  cmsKey,
 }) => {
   const color = 'dark';
 

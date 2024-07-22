@@ -43,4 +43,3 @@ export default function SEO({ headTitle }: ISEO) {
     </Head>
   );
 }
-

@@ -13,8 +13,7 @@ interface ContainerProps {
   flexDirection?: string;
 }
 
-
-const Container: React.FC<ContainerProps> = ({ children, ...props }) => {
+const Container: React.FC<ContainerProps> = ({ children }) => {
   return (
     <section className={`w-full px-4 mx-auto h-full flex items-center`}>
       {children}

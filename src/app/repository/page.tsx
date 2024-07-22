@@ -7,7 +7,7 @@ import { ThemeApp } from '@components/wrappers/context';
 import { service } from '@services/index';
 import { IRepoGit, IUserGit } from '@services/types';
 import { useToast } from 'hooks/Toast';
-import { useCallback, useContext, useEffect, useState } from 'react';
+import { ChangeEvent, useCallback, useContext, useEffect, useState } from 'react';
 import { handleErrors } from './../../hooks/Toast/handleErros';
 interface IUser {
   nameRepo: string;
@@ -25,7 +25,7 @@ export default function RepositoryGit() {
     nameRepo: '',
   });
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setNameRepository((prevState) => ({
       ...prevState,
@@ -46,7 +46,7 @@ export default function RepositoryGit() {
       showToast(handleErrors(err));
     }
     setLoading(false);
-  }, []);
+  }, [showToast]);
 
   const handleFindRepoGit = useCallback(async () => {
     if (!nameRepository.nameRepo) {
@@ -55,13 +55,13 @@ export default function RepositoryGit() {
     }
     setIsValid(false);
     await readEndFindRepoGit({ nameRepo: nameRepository.nameRepo });
-  }, [nameRepository, isValid]);
+  }, [nameRepository, readEndFindRepoGit]);
 
   useEffect(() => {
     (async () => {
       await readEndFindRepoGit({ nameRepo: 'joseallef' });
     })();
-  }, []);
+  }, [readEndFindRepoGit]);
 
   return (
     <>
