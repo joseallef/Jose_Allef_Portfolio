@@ -1,10 +1,11 @@
 import { ThemeApp } from "@components/wrappers/context";
 import { IGetContentCms } from "@services/cms/type";
-import React, { ReactNode, createContext, useContext, useEffect, useRef, useState } from 'react';
+import React, { ReactNode, createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 
 interface ModalContextProps {
   isOpen: boolean;
   project: IGetContentCms | null;
+  // eslint-disable-next-line no-unused-vars
   openModal: (project: IGetContentCms) => void;
   closeModal: () => void;
 }
@@ -40,17 +41,17 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({ children }) => {
     setProject(null);
   };
 
-  const handleClickOutside = (event: MouseEvent) => {
+  const handleClickOutside = useCallback((event: MouseEvent) => {
     if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
       closeModal();
     }
-  };
+  }, []);
 
-  const handleEscapePress = (event: KeyboardEvent) => {
+  const handleEscapePress = useCallback((event: KeyboardEvent) => {
     if (event.key === 'Escape') {
       closeModal();
     }
-  };
+  }, []);
 
   useEffect(() => {
     if (isOpen) {
@@ -65,7 +66,7 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({ children }) => {
       document.removeEventListener('mousedown', handleClickOutside);
       document.removeEventListener('keydown', handleEscapePress);
     };
-  }, [isOpen]);
+  }, [isOpen, handleClickOutside, handleEscapePress]);
 
   return (
     <ModalContext.Provider value={{ isOpen, project, openModal, closeModal }}>

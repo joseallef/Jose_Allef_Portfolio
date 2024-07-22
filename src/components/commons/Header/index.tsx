@@ -6,15 +6,6 @@ import NavBar from '../NavBar';
 
 export default function Header() {
   const { toggleTheme, themeApp } = useContext(ThemeApp);
-  // const [isMounted, setIsMounted] = useState(false);
-
-  // useEffect(() => {
-  //   setIsMounted(true);
-  // }, []);
-
-  // if (!isMounted) {
-  //   return null; // Renderizar um fallback até o cliente estar montado
-  // }
 
   return (
     <header className="flex items-center justify-around flex-wrap w-full text-white font-bold text-lg p-4 pt-6">

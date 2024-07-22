@@ -15,6 +15,7 @@ interface IToastProvider {
 }
 
 interface IToastContext {
+  // eslint-disable-next-line no-unused-vars
   showToast: (props: IToastProps) => void;
 }
 
