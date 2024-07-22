@@ -6,7 +6,7 @@
     "node": "20.x"
   },
   "scripts": {
-    "dev": "next",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -18,49 +18,41 @@
     "build:storybook": "build-storybook"
   },
   "dependencies": {
-    "@types/jest": "^29.5.12",
     "commitizen": "^4.3.0",
-    "eslint-config-next": "^14.2.3",
-    "eslint-plugin-jest": "^28.5.0",
-    "eslint-plugin-jsdoc": "^48.2.7",
     "graphql": "^16.8.1",
     "graphql-request": "^7.0.1",
-    "jest": "^29.7.0",
     "lodash": "^4.17.21",
     "next": "^14.2.3",
     "nookies": "^2.5.2",
-    "prop-types": "^15.7.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-is": "^18.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.9",
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@storybook/addon-actions": "^8.1.5",
     "@storybook/addon-essentials": "^8.1.5",
     "@storybook/addon-links": "^8.1.5",
     "@storybook/react": "^8.1.5",
-    "@testing-library/jest-dom": "^6.4.2",
-    "@testing-library/react": "^15.0.7",
-    "@testing-library/react-hooks": "^8.0.1",
     "@types/node": "^20.13.0",
     "autoprefixer": "^10.4.17",
     "cypress": "^13.6.4",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "^9.4.0",
-    "eslint-config-next": "^14.2.3",
+    "eslint-config-next": "14.2.5",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-jest": "^28.6.0",
     "husky": "^9.0.11",
-    "jest-canvas-mock": "^2.5.2",
     "postcss": "^8.4.38",
+    "prettier": "^2.8.8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5.3.3",
-    "yarn": "^1.22.21"
+    "typescript": "^5.3.3"
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn lint",
+      "pre-push": "npm run lint",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
