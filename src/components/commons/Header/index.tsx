@@ -26,7 +26,7 @@ export default function Header() {
           onClick={() => toggleTheme()}
           className={`relative flex justify-around items-center w-[70px] h-[25px] rounded-full transition-all duration-300 ${themeApp === 'dark' ? 'bg-[#4d98fa3f]' : 'bg-[#2c4efa3f]'} md:w-[80px] md:h-[30px] cursor-pointer`}
         >
-          <img src="/image/moon.svg" alt="Ícone Noite" />
+          <img src="/image/moon.svg" alt="Ícone Lua" />
           <button
             className={`absolute w-[25px] h-[25px] bg-slate-200 rounded-full transition-all duration-300 border-none ${themeApp === 'light' ? 'ml-[38px] md:ml-[44px]' : 'left-1'} md:w-[26px] md:h-[26px]`}
           />

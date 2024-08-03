@@ -14,7 +14,7 @@ export default function Home() {
 
             <div className="w-full flex justify-center p-0 sm:p-5 lg:p-0">
               <img
-                src="https://media.licdn.com/dms/image/D4D03AQEh-qNSzAsiJw/profile-displayphoto-shrink_400_400/0/1683594689756?e=1722470400&v=beta&t=llXFmcq_1qv2UtipcLuXu4wKtuebU6gMMn_VG5fRwHo"
+                 src="/image/foto-perfil.jpeg"
                 alt="Foto de perfil"
                 className="object-cover h-36 w-32 md:h-64 md:w-56 flex justify-center rounded-lg" />
             </div>
