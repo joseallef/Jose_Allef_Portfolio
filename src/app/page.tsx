@@ -10,7 +10,7 @@ export default function Home() {
           
           <div className="flex max-w-[980px] flex-col items-start gap-4 md:w-1/2">
             <div className="inline-flex items-center rounded-lg bg-muted px-3 py-1 text-sm font-medium">
-              👋 Bem-vindo ao meu portfólio
+              <span className="animate-wave mr-2 cursor-default">👋</span> Bem-vindo ao meu portfólio
             </div>
             <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-5xl lg:text-6xl lg:leading-[1.1]">
               Olá, sou <span className="text-primary">José Allef</span> <br className="hidden sm:inline" />

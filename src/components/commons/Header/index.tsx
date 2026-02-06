@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useContext } from 'react';
 import { ThemeApp } from '../../wrappers/context';
 import NavBar from '../NavBar';
@@ -11,11 +12,13 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
       <div className="flex h-16 items-center justify-between px-4 sm:px-8 max-w-7xl mx-auto">
         <div className="flex items-center gap-2">
-          <img
-            src="/image/Logo.svg"
-            alt="Logo"
-            className={`h-8 w-auto transition-all duration-300 ${themeApp === 'light' ? 'invert brightness-0' : ''}`}
-          />
+          <Link href="/">
+            <img
+              src="/image/Logo.svg"
+              alt="Logo"
+              className="h-8 w-auto transition-all duration-300 logo-adaptive"
+            />
+          </Link>
         </div>
 
         <nav className="hidden md:flex items-center gap-6">
