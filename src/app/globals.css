@@ -2,18 +2,96 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Estilos globais para personalizar a barra de rolagem */
-::-webkit-scrollbar {
-  width: 8px; /* Largura da barra de rolagem */
-  height: 8px; /* Altura da barra de rolagem horizontal */
+:root {
+  --background: #ffffff;
+  --foreground: #020817;
+
+  --muted: #e2e8f0;
+  --muted-foreground: #64748b;
+
+  --card: #ffffff;
+  --card-foreground: #020817;
+
+  --popover: #ffffff;
+  --popover-foreground: #020817;
+
+  --border: #cbd5e1;
+  --input: #cbd5e1;
+
+  --primary: #7c3aed;
+  --primary-foreground: #f8fafc;
+
+  --secondary: #f1f5f9;
+  --secondary-foreground: #0f172a;
+
+  --accent: #f1f5f9;
+  --accent-foreground: #0f172a;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #f8fafc;
+
+  --ring: #7c3aed;
+  --radius: 0.5rem;
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: #004eb4; /* Cor do "polegar" da barra de rolagem */
-  border-radius: 4px; /* Bordas arredondadas */
+[data-theme='dark'] {
+  --background: #020817;
+  --foreground: #f8fafc;
+
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+
+  --card: #020817;
+  --card-foreground: #f8fafc;
+
+  --popover: #020817;
+  --popover-foreground: #f8fafc;
+
+  --border: #1e293b;
+  --input: #1e293b;
+
+  --primary: #7c3aed;
+  --primary-foreground: #f8fafc;
+
+  --secondary: #1e293b;
+  --secondary-foreground: #f8fafc;
+
+  --accent: #1e293b;
+  --accent-foreground: #f8fafc;
+
+  --destructive: #7f1d1d;
+  --destructive-foreground: #f8fafc;
+
+  --ring: #7c3aed;
+}
+
+body {
+  @apply bg-background text-foreground;
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #4d98fa3f; /* Cor do "trilho" da barra de rolagem */
-  border-radius: 4px; /* Bordas arredondadas */
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb {
+  background-color: #334155;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb:hover {
+  background-color: #475569;
 }

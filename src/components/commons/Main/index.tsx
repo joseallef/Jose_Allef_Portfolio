@@ -6,7 +6,7 @@ interface WrapperMainProps {
 
 export const WrapperMain: React.FC<WrapperMainProps> = ({ children }) => {
   return (
-    <main className="flex justify-center items-center flex-wrap w-full h-full mx-auto text-white p-4 lg:p-6">
+    <main className="flex w-full flex-col items-center justify-center py-12 md:py-10 lg:py-16 xl:py-24 2xl:py-32">
       {children}
     </main>
   );

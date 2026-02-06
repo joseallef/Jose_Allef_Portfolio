@@ -29,10 +29,12 @@ export interface IGitException {
 }
 
 export interface IRepoGit {
+  id: number
   name: string
   html_url: string
   forks: boolean
   watchers: string
+  language: string
   description: string
   stargazers_count: number
   owner: {
