@@ -1,3 +1,4 @@
+import { ExperienceSection } from "@components/commons/ExperienceSection";
 import { WrapperMain } from "@components/commons/Main";
 import Link from "next/link";
 
@@ -48,6 +49,8 @@ export default function Home() {
 
         </div>
       </div>
+      
+      <ExperienceSection />
     </WrapperMain>
   );
 }
