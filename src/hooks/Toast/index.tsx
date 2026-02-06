@@ -1,4 +1,4 @@
-import React, { ReactNode, createContext, useContext, useEffect, useState } from "react";
+import React, { ReactNode, createContext, useCallback, useContext, useEffect, useState } from "react";
 
 interface IToastProps {
   status: "success" | "error" | "info" | "warning";
@@ -63,11 +63,11 @@ export const ToastProvider: React.FC<IToastProvider> = ({ children }) => {
     position: "top-center"
   });
 
-  const showToast = (props: IToastProps) => {
+  const showToast = useCallback((props: IToastProps) => {
     setIsShowToast(true);
     setProgress(100);
     setToastProps(props);
-  };
+  }, []);
 
   const getPositionStyles = (position: string) => {
     switch (position) {

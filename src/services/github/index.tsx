@@ -3,24 +3,19 @@ import { IRepoGit, IUserGit, IUserGitHub } from '@services/types';
 export const repositoryGitHub = async ({ user }: IUserGitHub) => {
   // eslint-disable-next-line no-useless-catch
   try {
-    const [userDataResponse, userRepositoriesResponse] = await Promise.all([
-      fetch(`https://api.github.com/users/${user}`, { cache: 'force-cache' }),
-      fetch(`https://api.github.com/users/${user}/repos`, { cache: 'force-cache' })
-    ]);
+    // Agora chama nossa API interna protegida em vez do GitHub diretamente
+    const response = await fetch(`/api/github?username=${user}`);
 
-    if (!userDataResponse.ok) {
-      throw new Error(`Failed to fetch user data: ${userDataResponse.status} ${userDataResponse.statusText}`);
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || `Failed to fetch data: ${response.status}`);
     }
 
-    if (!userRepositoriesResponse.ok) {
-      throw new Error(`Failed to fetch user repositories: ${userRepositoriesResponse.status} ${userRepositoriesResponse.statusText}`);
-    }
-    const userData: IUserGit = await userDataResponse.json();
-    const userRepositories: IRepoGit[] = await userRepositoriesResponse.json();
+    const data = await response.json();
 
     return {
-      gitUser: userData,
-      gitRepositories: userRepositories
+      gitUser: data.gitUser as IUserGit,
+      gitRepositories: data.gitRepositories as IRepoGit[]
     };
   } catch (error) {
     throw error;

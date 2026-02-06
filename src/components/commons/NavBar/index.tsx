@@ -1,4 +1,7 @@
+'use client';
+
 import NextLink from 'next/link';
+import { usePathname } from 'next/navigation';
 
 type ILink = {
   text: string;
@@ -24,15 +27,28 @@ const links: ILink[] = [
 ];
 
 export default function NavBar() {
+  const pathname = usePathname();
+
   return (
-    <ul className="list-none flex justify-between items-center w-full order-3 px-0 lg:justify-around overflow-x-scroll sm:overflow-hidden">
-      {links.map((link) => (
-        <li key={link.text} className='p-2'>
-          <NextLink href={link.url} passHref className='transition-all duration-500 border-b break-before-all border-blue-950 hover:border-blue-300'>
-            {link.text}
-          </NextLink>
-        </li>
-      ))}
+    <ul className="list-none flex justify-center gap-6 items-center w-full px-0 overflow-x-auto sm:overflow-visible no-scrollbar">
+      {links.map((link) => {
+        const isActive = link.url === '/' ? pathname === '/' : pathname.startsWith(link.url);
+        
+        return (
+          <li key={link.text} className=''>
+            <NextLink 
+              href={link.url} 
+              className={`text-sm font-medium transition-colors duration-200 ${
+                isActive 
+                  ? 'text-primary font-bold' 
+                  : 'text-muted-foreground hover:text-primary'
+              }`}
+            >
+              {link.text}
+            </NextLink>
+          </li>
+        );
+      })}
     </ul>
   );
 }

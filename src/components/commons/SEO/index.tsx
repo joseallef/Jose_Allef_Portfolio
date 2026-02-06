@@ -18,7 +18,7 @@ export default function SEO({ headTitle }: ISEO) {
       <link rel="shortcut icon" href="/icon/icon.ico" />
       <meta name="title" content={title} />
       <meta name="robots" content="index, follow" />
-      <meta name="author" content="Jose Allef - Jabs" />
+      <meta name="author" content="Jose Allef - Jobs" />
       <meta name="description" content={description} />
       <meta name="google-site-verification" content="o-4RJTK3w1ZFzWZYYw3tx0YEYVJJMGn2-r7cW14pYwY" />
 

@@ -1,41 +1,51 @@
 import { WrapperMain } from "@components/commons/Main";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <WrapperMain>
-      <div className="flex flex-col md:flex-row justify-center items-center h-full md:p-6">
-        <div className="flex flex-col md:flex-row border border-sky-800 rounded-md">
-          <div className="flex flex-col p-2 md:p-3 justify-center md:justify-between items-center md:items-start w-full md:w-1/2">
-            <div className="my-4 w-full">
-              <h2 className="text-center w-full font-bold text-2xl lg:text-3xl bg-gradient-to-r from-fuchsia-600 to-purple-800 bg-clip-text text-transparent">
-                Desenvolvedor Front-end
-              </h2>
+      <div className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
+        <div className="flex flex-col md:flex-row gap-10 items-center">
+          
+          <div className="flex max-w-[980px] flex-col items-start gap-4 md:w-1/2">
+            <div className="inline-flex items-center rounded-lg bg-muted px-3 py-1 text-sm font-medium">
+              👋 Bem-vindo ao meu portfólio
             </div>
+            <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-5xl lg:text-6xl lg:leading-[1.1]">
+              Olá, sou <span className="text-primary">José Allef</span> <br className="hidden sm:inline" />
+              Desenvolvedor Front-end
+            </h1>
+            <p className="max-w-[700px] text-lg text-muted-foreground sm:text-xl">
+              Especialista em construir experiências digitais excepcionais. 
+              Foco em acessibilidade, performance e design moderno usando React, Next.js e Tailwind CSS.
+            </p>
+            
+            <div className="flex gap-4 mt-4">
+              <Link 
+                href="/projects" 
+                className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8"
+              >
+                Ver Projetos
+              </Link>
+              <Link 
+                href="/contact" 
+                className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background border border-input hover:bg-accent hover:text-accent-foreground h-11 px-8"
+              >
+                Contato
+              </Link>
+            </div>
+          </div>
 
-            <div className="w-full flex justify-center p-0 sm:p-5 lg:p-0">
+          <div className="flex justify-center md:justify-end md:w-1/2">
+            <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
               <img
                  src="/image/foto-perfil.jpeg"
-                alt="Foto de perfil"
-                className="object-cover h-36 w-32 md:h-64 md:w-56 flex justify-center rounded-lg" />
+                alt="José Allef"
+                className="object-cover w-full h-full" 
+              />
             </div>
           </div>
 
-          <div className="w-full md:w-1/2 p-2 md:p-3 sm:mt-2 md:mt-0">
-            <div className="my-4 w-full">
-              <h2 className="text-center text-2xl lg:text-3xl font-bold bg-gradient-to-r from-fuchsia-600 to-purple-800 bg-clip-text text-transparent">
-                Olá, sou o José Allef!
-              </h2>
-            </div>
-
-            <div className="my-4 w-full">
-              <p className="text-base lg:text-xl font-bold text-gray-400 mb-4">
-                Com mais de 2 anos de experiência na área de tecnologia,
-                sou formado em Análise e Desenvolvimento de Sistemas pela UNICID e continuo a me aprimorar
-                por meio de treinamentos e desafios constantes. Participei ativamente do Ignite da Rocketseat
-                e do Bootcamp JAMStack da Alura, ampliando ainda mais meu conhecimento e habilidades.
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </WrapperMain>

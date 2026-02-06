@@ -40,7 +40,12 @@ export function ThemeGlobalApp({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const theme = cookies.theme || getThemeDevice();
     setThemeApp(theme);
+    document.documentElement.setAttribute('data-theme', theme);
   }, [cookies.theme, getThemeDevice]);
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', themeApp);
+  }, [themeApp]);
 
   return (
     <ThemeApp.Provider value={providers}>

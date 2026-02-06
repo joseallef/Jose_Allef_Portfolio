@@ -2,6 +2,7 @@
 
 import { Box } from '@components/commons/Box';
 import Header from '@components/commons/Header';
+import Footer from '@components/commons/Footer';
 import { ThemeGlobalApp } from '@components/wrappers/context';
 import { ModalProvider } from 'hooks/Modal';
 import React from 'react';
@@ -15,6 +16,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
           <ModalProvider>
             <Header />
             {children}
+            <Footer />
           </ModalProvider>
         </ToastProvider>
       </Box>
