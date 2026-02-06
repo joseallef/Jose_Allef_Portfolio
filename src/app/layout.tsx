@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     default: 'José Allef - Desenvolvedor Full Stack',
     template: '%s | José Allef'
   },
-  description: 'Portfólio de José Allef. Desenvolvedor Full Stack especializado em React, Next.js, TypeScript e Node.js. Foco em performance, acessibilidade e interfaces modernas.',
-  keywords: ['José Allef', 'Desenvolvedor Web', 'Full Stack', 'Frontend', 'React', 'Next.js', 'TypeScript', 'Node.js', 'Tailwind CSS', 'Portfólio'],
+  description: 'Portfólio de José Allef. Desenvolvedor Front-end especializado em React e Next.js. Experiência em sustentação de sistemas governamentais críticos (Portal do Servidor SP), migração de arquitetura e conformidade LGPD.',
+  keywords: ['José Allef', 'Desenvolvedor Front-end', 'React', 'Next.js', 'Portal do Servidor', 'LGPD', 'TypeScript', 'Node.js', 'Tailwind CSS', 'Sustentação de Sistemas'],
   authors: [{ name: 'José Allef', url: 'https://jose-allef.vercel.app' }],
   creator: 'José Allef',
   openGraph: {
