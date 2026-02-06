@@ -1,4 +1,3 @@
-import { ThemeApp } from '@components/wrappers/context';
 import { IGetContentCms } from '@services/cms/type';
 import React, {
   ReactNode,
@@ -33,8 +32,6 @@ export const useModal = (): ModalContextProps => {
 };
 
 export const ModalProvider: React.FC<ModalProviderProps> = ({ children }) => {
-  const { themeApp } = useContext(ThemeApp);
-
   const [isOpen, setIsOpen] = useState(false);
   const [project, setProject] = useState<IGetContentCms | null>(null);
   const modalRef = useRef<HTMLDivElement>(null);
