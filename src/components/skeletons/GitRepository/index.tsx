@@ -110,7 +110,7 @@ export const GitRepository = ({ repository, loading }: IPropGitProfile) => {
                     <span>{repo.forks}</span>
                   </div>
                 </div>
-                <audio ref={audioRef} src="/audio/efeito-repo.wav" />
+                <audio ref={audioRef} src="/audio/efeito-repo1.wav" />
               </a>
             ))}
           </>

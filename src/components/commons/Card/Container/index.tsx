@@ -50,7 +50,7 @@ export const CardContainer: React.FC<CardContainerProps> = ({ children }) => {
       className="flex flex-col rounded-lg border border-border bg-card text-card-foreground shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-lg hover:cursor-pointer w-full h-full overflow-hidden"
     >
       {children}
-      <audio ref={audioRef} src="/audio/efeito-repo.wav" />
+      <audio ref={audioRef} src="/audio/efeito-repo1.wav" />
     </div>
   );
 };
