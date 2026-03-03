@@ -13,9 +13,9 @@ export const ThemeApp = createContext<IContextType>({
   toggleTheme: () => { },
 });
 
-export function ThemeGlobalApp({ children }: { children: React.ReactNode }) {
+export function ThemeGlobalApp({ children, initialTheme }: { children: React.ReactNode, initialTheme?: string }) {
   const cookies = parseCookies();
-  const [themeApp, setThemeApp] = useState<string>('dark');
+  const [themeApp, setThemeApp] = useState<string>(initialTheme || 'dark');
 
   const getThemeDevice = useCallback(() => {
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';

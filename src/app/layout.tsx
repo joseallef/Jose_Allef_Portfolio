@@ -3,6 +3,7 @@ import { Inter, Roboto_Mono } from 'next/font/google';
 import { ReactNode } from "react";
 import './globals.css';
 import { Providers } from "./providers";
+import { cookies } from "next/headers";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -70,10 +71,13 @@ export default function RootLayout({
 }: {
   children: ReactNode
 }) {
+  const cookieStore = cookies();
+  const theme = cookieStore.get('theme')?.value || 'dark';
+
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${robotoMono.variable}`}>
+    <html lang="pt-BR" data-theme={theme} className={`${inter.variable} ${robotoMono.variable}`}>
       <body>
-        <Providers>
+        <Providers theme={theme}>
           {children}
         </Providers>
       </body>
